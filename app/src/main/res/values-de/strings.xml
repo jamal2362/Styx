@@ -59,6 +59,8 @@
     <string name="action_show_homepage">Startseite</string>
     <string name="action_webpage">Webseite</string>
     <string name="action_yes">Ja</string>
+    <string name="ad_block_blocked_page">Der Werbeblocker hat die folgende Seite blockiert:</string>
+    <string name="ad_block_blocked_filter">Aufgrund des folgenden Filters:</string>
     <string name="ad_block_load_failure">Das Laden der Online-Hosts ist fehlgeschlagen.</string>
     <string name="ad_server_list">AdGuard Ad-Server Liste</string>
     <string name="agent_android_mobile">Android (Mobile)</string>

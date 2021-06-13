@@ -38,7 +38,7 @@ sealed class HostsSourceType {
 fun UserPreferences.selectedHostsSource(): HostsSourceType {
     val localFile: File? = hostsLocalFile?.let(::File)?.takeIf(File::exists)?.takeIf(File::canRead)
 
-    val remoteUrl: HttpUrl? = hostsRemoteFile?.toHttpUrlOrNull()
+    val remoteUrl: HttpUrl? = hostsRemoteFile?.let { it.toHttpUrlOrNull() }
 
     val source = hostsSource
 

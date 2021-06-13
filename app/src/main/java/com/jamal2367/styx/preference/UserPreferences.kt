@@ -7,7 +7,10 @@ import com.jamal2367.styx.AccentTheme
 import com.jamal2367.styx.AppTheme
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.R
-import com.jamal2367.styx.browser.*
+import com.jamal2367.styx.browser.JavaScriptChoice
+import com.jamal2367.styx.browser.SearchBoxDisplayChoice
+import com.jamal2367.styx.browser.SearchBoxModel
+import com.jamal2367.styx.browser.SuggestionNumChoice
 import com.jamal2367.styx.constant.DEFAULT_ENCODING
 import com.jamal2367.styx.constant.Uris
 import com.jamal2367.styx.device.ScreenSize

@@ -3,12 +3,16 @@ package com.jamal2367.styx.database.bookmark;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.util.Log;
+
 import androidx.annotation.NonNull;
+
 import com.jamal2367.styx.database.Bookmark;
 import com.jamal2367.styx.database.WebPageKt;
 import com.jamal2367.styx.utils.Utils;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -18,6 +22,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
+
 import io.reactivex.Completable;
 
 /**

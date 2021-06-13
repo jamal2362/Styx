@@ -3,6 +3,7 @@ package com.jamal2367.styx.di
 import android.app.Application
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.ThemedActivity
+import com.jamal2367.styx.adblock.AbpBlocker
 import com.jamal2367.styx.adblock.BloomFilterAdBlocker
 import com.jamal2367.styx.adblock.NoOpAdBlocker
 import com.jamal2367.styx.browser.BrowserPopupMenu
@@ -99,6 +100,8 @@ interface AppComponent {
     fun inject(bookmarksAdapter: BookmarksAdapter)
 
     fun provideBloomFilterAdBlocker(): BloomFilterAdBlocker
+
+    fun provideAbpAdBlocker(): AbpBlocker
 
     fun provideNoOpAdBlocker(): NoOpAdBlocker
 

@@ -71,7 +71,6 @@ class StyxWebClient(
 
     private val uiController: UIController
     private val intentUtils = IntentUtils(activity)
-    private val emptyResponseByteArray: ByteArray = byteArrayOf()
 
     @Inject internal lateinit var userPreferences: UserPreferences
     @Inject @UserPrefs internal lateinit var preferences: SharedPreferences
@@ -93,6 +92,8 @@ class StyxWebClient(
     private var zoomScale = 0.0f
 
     private var currentUrl: String = ""
+
+    private var elementHide = true
 
     private var color = ""
 
@@ -117,18 +118,20 @@ class StyxWebClient(
     }
 
     private fun chooseAdBlocker(): AdBlocker = if (userPreferences.adBlockEnabled) {
-        activity.injector.provideBloomFilterAdBlocker()
+        activity.injector.provideAbpAdBlocker()
     } else {
         activity.injector.provideNoOpAdBlocker()
     }
 
     private fun shouldRequestBeBlocked(pageUrl: String, requestUrl: String) =
-        !whitelistModel.isUrlAllowedAds(pageUrl) && adBlock.isAd(requestUrl)
+    !whitelistModel.isUrlAllowedAds(pageUrl) && adBlock.isAd(requestUrl)
 
     override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? {
-        if (shouldRequestBeBlocked(currentUrl, request.url.toString())) {
-            val empty = ByteArrayInputStream(emptyResponseByteArray)
-            return WebResourceResponse("text/plain", "utf-8", empty)
+        // maybe adjust to always return response... null means allow anyway. what is the "super" actually doing? same as null?
+        // adBlock should probably be renamed
+        val response = adBlock.shouldBlock(request, currentUrl)
+        if (response != null) {
+            return response
         }
         return super.shouldInterceptRequest(view, request)
     }
@@ -307,6 +310,12 @@ class StyxWebClient(
         }
         if (styxView.invertPage) {
             view.evaluateJavascript(invertPageJs.provideJs(), null)
+        }
+        if (elementHide) {
+            adBlock.loadScript(Uri.parse(currentUrl))?.let {
+                view.evaluateJavascript(it, null)
+            }
+            // takes around half a second, but not sure what that tells me
         }
         if (url.contains(BuildConfig.APPLICATION_ID + "/files/homepage.html")) {
             view.evaluateJavascript("javascript:(function() {" + "link1var = '" + userPreferences.link1  + "';" + "})();", null)

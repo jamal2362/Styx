@@ -1,20 +1,20 @@
 package com.jamal2367.styx.browser.bookmarks
 
-import com.jamal2367.styx.R
-import com.jamal2367.styx.browser.activity.BrowserActivity
-import com.jamal2367.styx.database.Bookmark
-import com.jamal2367.styx.extensions.drawable
-import com.jamal2367.styx.extensions.setImageForTheme
-import com.jamal2367.styx.favicon.FaviconModel
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.jamal2367.styx.R
+import com.jamal2367.styx.browser.activity.BrowserActivity
 import com.jamal2367.styx.controller.UIController
+import com.jamal2367.styx.database.Bookmark
 import com.jamal2367.styx.database.bookmark.BookmarkRepository
 import com.jamal2367.styx.di.DatabaseScheduler
 import com.jamal2367.styx.di.injector
+import com.jamal2367.styx.extensions.drawable
+import com.jamal2367.styx.extensions.setImageForTheme
+import com.jamal2367.styx.favicon.FaviconModel
 import com.jamal2367.styx.utils.ItemDragDropSwipeAdapter
 import io.reactivex.Scheduler
 import io.reactivex.disposables.Disposable

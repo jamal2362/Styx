@@ -249,6 +249,8 @@
     <string name="pref_category_general">常规设置</string>
     <string name="pref_category_landscape">横屏模式</string>
     <string name="pref_category_portrait">竖屏模式</string>
+    <string name="pref_donation_summary">如果你喜欢我的工作，请支持我</string>
+    <string name="pref_donation_title">捐赠</string>
     <string name="pref_report_issue_summary">在GitHub上报告bug并提出改进建议。</string>
     <string name="pref_report_issue_title">报告问题</string>
     <string name="pref_summary_desktop_width">桌面模式视口宽度，为较小的内容设置更高的宽度</string>
@@ -329,6 +331,7 @@
     <string name="settings_summary_import_export">备份和还原设置及书签</string>
     <string name="settings_summary_privacy">缓存、历史记录、cookie…</string>
     <string name="settings_summary_vertical_tab_bar">禁用它在导航抽屉中使用选项卡</string>
+    <string name="settings_support">支持</string>
     <string name="settings_title_apps">应用</string>
     <string name="settings_title_dark_mode_default">强制深色模式</string>
     <string name="settings_title_desktop_mode_default">桌面模式:</string>

@@ -2,6 +2,8 @@ package com.jamal2367.styx.adblock
 
 import android.app.Application
 import android.net.Uri
+import android.webkit.WebResourceRequest
+import android.webkit.WebResourceResponse
 import com.jamal2367.styx.R
 import com.jamal2367.styx.adblock.source.HostsDataSourceProvider
 import com.jamal2367.styx.adblock.source.HostsResult
@@ -25,6 +27,7 @@ import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.plusAssign
 import io.reactivex.rxkotlin.subscribeBy
+import java.io.ByteArrayInputStream
 import java.net.URISyntaxException
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -128,6 +131,14 @@ class BloomFilterAdBlocker @Inject constructor(
         objectStore.store(BLOOM_FILTER_KEY, bloomFilter)
 
         bloomFilter
+    }
+
+    override fun loadScript(uri: Uri): String? = null
+
+    override fun shouldBlock(request: WebResourceRequest, pageUrl: String): WebResourceResponse? {
+        if (isAd(request.url.toString()))
+            return WebResourceResponse("text/plain", "utf-8", ByteArrayInputStream(byteArrayOf()))
+        return null
     }
 
     override fun isAd(url: String): Boolean {

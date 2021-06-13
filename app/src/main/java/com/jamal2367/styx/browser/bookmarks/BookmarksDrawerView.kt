@@ -22,7 +22,7 @@ import com.jamal2367.styx.di.MainScheduler
 import com.jamal2367.styx.di.NetworkScheduler
 import com.jamal2367.styx.di.injector
 import com.jamal2367.styx.dialog.StyxDialogBuilder
-import com.jamal2367.styx.extensions.*
+import com.jamal2367.styx.extensions.inflater
 import com.jamal2367.styx.favicon.FaviconModel
 import com.jamal2367.styx.preference.UserPreferences
 import com.jamal2367.styx.utils.*

@@ -1,7 +1,6 @@
 package com.jamal2367.styx.html.download
 
 import android.app.Application
-import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.R
 import com.jamal2367.styx.constant.FILE
 import com.jamal2367.styx.database.downloads.DownloadEntry

@@ -1,6 +1,5 @@
 package com.jamal2367.styx.extensions
 
-import com.jamal2367.styx.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +7,7 @@ import android.widget.Button
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.Snackbar
+import com.jamal2367.styx.R
 
 /**
  * Adds an extra action button to this snackbar.

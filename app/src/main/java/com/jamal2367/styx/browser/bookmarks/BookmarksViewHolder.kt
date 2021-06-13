@@ -1,13 +1,13 @@
 package com.jamal2367.styx.browser.bookmarks
 
-import com.jamal2367.styx.R
-import com.jamal2367.styx.database.Bookmark
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
+import com.jamal2367.styx.R
+import com.jamal2367.styx.database.Bookmark
 import com.jamal2367.styx.utils.ItemDragDropSwipeViewHolder
 
 class BookmarkViewHolder(
