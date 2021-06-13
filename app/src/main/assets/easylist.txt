@@ -1,9 +1,9 @@
 ![Adblock Plus 2.0]
-! Checksum: sdcqu+pBd+llFfKQSH5EiQ
+! Checksum: 51LUgAuW9W41n6t+ZHHsTg
 ! Title: AdGuard Base filter + EasyList
 ! Description: EasyList + AdGuard English filter. This filter is necessary for quality ad blocking.
-! Version: 2.1.80.85
-! TimeUpdated: 2021-06-13T13:03:07+00:00
+! Version: 2.1.80.86
+! TimeUpdated: 2021-06-13T13:31:16+00:00
 ! Expires: 4 days (update frequency)
 ! Homepage: https://github.com/AdguardTeam/AdGuardFilters
 ! License: https://github.com/AdguardTeam/AdguardFilters/blob/master/LICENSE
@@ -42963,9 +42963,6 @@ implbits.com#@#.banner_container
 @@||tous-sports.tv/js/advertisement-AdBlock.js
 !
 @@||myex.com/API/1/MYEX/$~third-party,xmlhttprequest
-! START: Fixing Safari SNI issues (https://github.com/AdguardTeam/CoreLibs/issues/598)
-! Probably obsolete rules, causes that HTTPS filtering doesn't work on some specific websites - https://github.com/AdguardTeam/CoreLibs/issues/1466
-! END
 !-------------------------------------------------------------------------------!
 !------------------ Fixing Stealth Mode ----------------------------------------!
 !-------------------------------------------------------------------------------!
