@@ -1,27 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--suppress AndroidElementNotAllowed -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory android:title="@string/settings_about">
+
         <Preference
-            android:summary="@string/url_twitter"
-            android:title="@string/action_follow_me">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="http://twitter.com/RestainoAnthony">
+            android:key="pref_version"
+            android:title="@string/version"
+            app:icon="@drawable/ic_info" />
+
+        <Preference
+            android:key="pref_webview"
+            android:title="@string/webview_version"
+            app:icon="@drawable/ic_settings" />
+
+        <Preference
+            android:key="pref_devtools"
+            android:title="@string/webview_devtools"
+            app:icon="@drawable/ic_settings">
+
+            <intent android:action="com.android.webview.SHOW_DEV_UI">
                 <extra
                     android:name="SOURCE"
                     android:value="SELF" />
             </intent>
         </Preference>
-        <Preference
-            android:key="pref_version"
-            android:title="@string/version" />
+
+        <PreferenceCategory android:title="@string/settings_help_us">
+
+            <Preference
+                android:summary="@string/pref_translation_summary"
+                android:title="@string/pref_translation_title"
+                app:icon="@drawable/ic_translate">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://crowdin.com/project/styx-browser">
+                    <extra
+                        android:name="SOURCE"
+                        android:value="SELF" />
+                </intent>
+            </Preference>
+
+            <Preference
+                android:summary="@string/pref_report_issue_summary"
+                android:title="@string/pref_report_issue_title"
+                app:icon="@drawable/ic_github">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/jamal2362/Styx">
+                    <extra
+                        android:name="SOURCE"
+                        android:value="SELF" />
+                </intent>
+            </Preference>
+
+        </PreferenceCategory>
+
+        <PreferenceCategory android:title="@string/settings_credits">
+
+            <Preference
+                android:title="@string/credits_lightning_browser"
+                app:icon="@drawable/ic_about">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/anthonycr/Lightning-Browser">
+                    <extra
+                        android:name="SOURCE"
+                        android:value="SELF" />
+                </intent>
+            </Preference>
+
+            <Preference
+                android:title="@string/credits_fulguris"
+                app:icon="@drawable/ic_about">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/Slion/Fulguris">
+                    <extra
+                        android:name="SOURCE"
+                        android:value="SELF" />
+                </intent>
+            </Preference>
+
+            <Preference
+                android:title="@string/credits_smartcookieweb"
+                app:icon="@drawable/ic_about">
+
+                <intent
+                    android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/CookieJarApps/SmartCookieWeb">
+                    <extra
+                        android:name="SOURCE"
+                        android:value="SELF" />
+                </intent>
+            </Preference>
+
+        </PreferenceCategory>
+
     </PreferenceCategory>
+
     <PreferenceCategory android:title="@string/licenses">
+
         <Preference
             android:summary="@string/mpl_license"
-            android:title="@string/app_name">
+            android:title="@string/app_name"
+            app:icon="@drawable/ic_library">
+
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="http://www.mozilla.org/MPL/2.0/">
@@ -30,9 +118,12 @@
                     android:value="SELF" />
             </intent>
         </Preference>
+
         <Preference
             android:summary="@string/apache"
-            android:title="@string/android_open_source_project">
+            android:title="@string/android_open_source_project"
+            app:icon="@drawable/ic_library">
+
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="http://www.apache.org/licenses/LICENSE-2.0">
@@ -41,42 +132,40 @@
                     android:value="SELF" />
             </intent>
         </Preference>
-        <Preference
-            android:summary="@string/freeware"
-            android:title="@string/hphosts_ad_server_list">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="http://hosts-file.net/">
-                <extra
-                    android:name="SOURCE"
-                    android:value="SELF" />
-            </intent>
-        </Preference>
+
         <Preference
             android:summary="@string/license_gnu"
-            android:title="@string/library_netcipher">
+            android:title="@string/ad_server_list"
+            app:icon="@drawable/ic_library">
+
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="http://www.gnu.org/licenses/lgpl.html">
+                android:data="http://www.gnu.org/licenses/lgpl-3.0.html">
                 <extra
                     android:name="SOURCE"
                     android:value="SELF" />
             </intent>
         </Preference>
+
         <Preference
-            android:summary="@string/apache"
-            android:title="@string/snacktory">
+            android:summary="@string/license_gnu"
+            android:title="@string/library_netcipher"
+            app:icon="@drawable/ic_library">
+
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="http://www.apache.org/licenses/LICENSE-2.0">
+                android:data="http://www.gnu.org/licenses/lgpl-3.0.html">
                 <extra
                     android:name="SOURCE"
                     android:value="SELF" />
             </intent>
         </Preference>
+
         <Preference
             android:summary="@string/mit_license"
-            android:title="@string/jsoup">
+            android:title="@string/jsoup"
+            app:icon="@drawable/ic_library">
+
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="http://jsoup.org/license">
@@ -85,5 +174,7 @@
                     android:value="SELF" />
             </intent>
         </Preference>
+
     </PreferenceCategory>
-</PreferenceScreen>
+
+</androidx.preference.PreferenceScreen>

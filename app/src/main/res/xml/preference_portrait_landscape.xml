@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/pref_category_portrait">
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="@bool/pref_default_portrait_pull_to_refresh"
+            android:key="@string/pref_key_portrait_pull_to_refresh"
+            android:summary="@string/recommended"
+            android:title="@string/pref_title_pull_to_refresh"
+            app:icon="@drawable/ic_action_refresh" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_portrait_tab_bar_vertical"
+            android:summary="@string/settings_summary_vertical_tab_bar"
+            android:title="@string/tabs_in_drawer"
+            app:icon="@drawable/ic_desktop" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="@bool/pref_default_toolbars_bottom"
+            android:key="@string/pref_key_portrait_toolbars_bottom"
+            android:title="@string/settings_title_toolbars_bottom"
+            app:icon="@drawable/ic_bottom" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            app:defaultValue="false"
+            app:icon="@drawable/ic_fullscreen"
+            app:key="@string/pref_key_portrait_hide_status_bar"
+            app:title="@string/pref_title_hide_status_bar" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            app:defaultValue="false"
+            app:icon="@drawable/ic_baseline_aspect_ratio_24"
+            app:key="@string/pref_key_portrait_hide_tool_bar"
+            app:title="@string/pref_title_hide_tool_bar" />
+
+        <SeekBarPreference
+            android:max="3840"
+            app:defaultValue="@integer/pref_default_portrait_desktop_width"
+            app:icon="@drawable/ic_desktop"
+            app:key="@string/pref_key_portrait_desktop_width"
+            app:min="640"
+            app:showSeekBarValue="true"
+            app:summary="@string/pref_summary_desktop_width"
+            app:title="@string/pref_title_desktop_width"
+            app:updatesContinuously="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_category_landscape">
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="@bool/pref_default_landscape_pull_to_refresh"
+            android:key="@string/pref_key_landscape_pull_to_refresh"
+            android:summary="@string/recommended"
+            android:title="@string/pref_title_pull_to_refresh"
+            app:icon="@drawable/ic_action_refresh" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_landscape_tab_bar_vertical"
+            android:summary="@string/settings_summary_vertical_tab_bar"
+            android:title="@string/tabs_in_drawer"
+            app:icon="@drawable/ic_desktop" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="@bool/pref_default_toolbars_bottom"
+            android:key="@string/pref_key_landscape_toolbars_bottom"
+            android:title="@string/settings_title_toolbars_bottom"
+            app:icon="@drawable/ic_bottom" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            app:defaultValue="false"
+            app:icon="@drawable/ic_fullscreen"
+            app:key="@string/pref_key_landscape_hide_status_bar"
+            app:title="@string/pref_title_hide_status_bar" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            app:defaultValue="false"
+            app:icon="@drawable/ic_baseline_aspect_ratio_24"
+            app:key="@string/pref_key_landscape_hide_tool_bar"
+            app:title="@string/pref_title_hide_tool_bar" />
+
+        <SeekBarPreference
+            android:max="3840"
+            app:defaultValue="@integer/pref_default_landscape_desktop_width"
+            app:icon="@drawable/ic_desktop"
+            app:key="@string/pref_key_landscape_desktop_width"
+            app:min="640"
+            app:showSeekBarValue="true"
+            app:summary="@string/pref_summary_desktop_width"
+            app:title="@string/pref_title_desktop_width"
+            app:updatesContinuously="true" />
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

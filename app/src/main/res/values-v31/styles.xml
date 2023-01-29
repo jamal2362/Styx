@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.App.Light" parent="Theme.Material3.Light">
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorSurface">@android:color/system_neutral2_50</item>
+        <item name="colorSecondaryVariant">@android:color/system_accent2_100</item>
+        <item name="colorTertiary">@android:color/system_neutral2_10</item>
+        <item name="colorPrimary">@android:color/system_accent1_600</item>
+        <item name="colorPrimaryContainer">@android:color/system_accent1_200</item>
+        <item name="android:textColorHighlight">@android:color/system_accent1_500</item>
+        <item name="colorSecondary">@android:color/system_accent1_600</item>
+        <item name="android:colorBackground">@android:color/system_neutral2_50</item>
+        <item name="android:navigationBarColor">@android:color/system_neutral2_50</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="popupMenuBackground">@drawable/popup_menu_background</item>
+        <item name="popupMenuStyle">@drawable/session_menu_background</item>
+        <item name="materialCardViewStyle">@style/App.Widget.Material3.CardView.Outlined</item>
+        <item name="snackbarButtonStyle">@style/MaterialSnackbarTextButtonTheme</item>
+        <item name="windowNoTitle">true</item>
+        <item name="enableEdgeToEdge">true</item>
+    </style>
+
+    <style name="Theme.App.Dark" parent="Theme.Material3.Dark">
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorSurface">@android:color/system_neutral1_900</item>
+        <item name="colorSecondaryVariant">@android:color/system_neutral1_900</item>
+        <item name="colorTertiary">@android:color/system_neutral2_800</item>
+        <item name="colorPrimary">@android:color/system_accent1_100</item>
+        <item name="colorPrimaryContainer">@android:color/system_accent1_500</item>
+        <item name="colorSecondary">@android:color/system_accent1_100</item>
+        <item name="android:textColorHighlight">@android:color/system_accent1_700</item>
+        <item name="android:colorBackground">@android:color/system_neutral1_900</item>
+        <item name="android:navigationBarColor">@android:color/system_neutral1_900</item>
+        <item name="popupMenuBackground">@drawable/popup_menu_background</item>
+        <item name="popupMenuStyle">@drawable/session_menu_background</item>
+        <item name="materialCardViewStyle">@style/App.Widget.Material3.CardView.Outlined</item>
+        <item name="snackbarStyle">@style/MaterialSnackbarTheme.Dark</item>
+        <item name="snackbarTextViewStyle">@style/MaterialSnackbarTextViewTheme.Dark</item>
+        <item name="snackbarButtonStyle">@style/MaterialSnackbarTextButtonTheme.Dark</item>
+        <item name="windowNoTitle">true</item>
+        <item name="enableEdgeToEdge">true</item>
+    </style>
+
+    <style name="Theme.App.Black" parent="Theme.Material3.Dark">
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorSurface">@android:color/system_neutral1_1000</item>
+        <item name="colorSecondaryVariant">@android:color/system_neutral1_900</item>
+        <item name="colorTertiary">@android:color/system_neutral1_900</item>
+        <item name="colorPrimary">@android:color/system_accent1_100</item>
+        <item name="colorPrimaryContainer">@android:color/system_accent1_500</item>
+        <item name="colorSecondary">@android:color/system_accent1_100</item>
+        <item name="android:textColorHighlight">@android:color/system_accent1_700</item>
+        <item name="android:colorBackground">@android:color/system_neutral1_1000</item>
+        <item name="android:navigationBarColor">@android:color/system_neutral1_1000</item>
+        <item name="popupMenuBackground">@drawable/popup_menu_background</item>
+        <item name="popupMenuStyle">@drawable/session_menu_background</item>
+        <item name="materialCardViewStyle">@style/App.Widget.Material3.CardView.Outlined</item>
+        <item name="snackbarStyle">@style/MaterialSnackbarTheme.Dark</item>
+        <item name="snackbarTextViewStyle">@style/MaterialSnackbarTextViewTheme.Dark</item>
+        <item name="snackbarButtonStyle">@style/MaterialSnackbarTextButtonTheme.Dark</item>
+        <item name="windowNoTitle">true</item>
+        <item name="enableEdgeToEdge">true</item>
+    </style>
+</resources>

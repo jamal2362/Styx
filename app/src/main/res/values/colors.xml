@@ -1,48 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <color name="black">#ff000000</color>
-    <color name="gray_dark">#222222</color>
-    <color name="gray_medium">#cdcdcd</color>
-    <color name="white">#ffffff</color>
-    <color name="gray_list_bg">#0d000000</color>
-
-    <color name="primary_color">#E0E0E0</color>
-    <color name="secondary_color">#66000000</color>
-    <color name="accent_color">#0073EF</color>
-
-    <color name="drawer_background">#ffffff</color>
-    <color name="drawer_background_dark">#424242</color>
-
-    <color name="secondary_color_settings">#9C9C9C</color>
-    <color name="secondary_color_settings_dark">#2E2E2E</color>
-
-    <color name="hint_text_light_theme">#80000000</color>
-    <color name="hint_text_dark_theme">#80ffffff</color>
-
-    <color name="primary_color_dark">#424242</color>
-
-    <color name="divider_dark">#1FFFFFFF</color>
-    <color name="divider_light">#1F000000</color>
-
-    <color name="selected_dark">#0FFFFFFF</color>
-    <color name="selected_light">#0F000000</color>
-
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
 
-    <color name="icon_light_theme">#8A000000</color>
+    <color name="bookmark_red">#FFEF5350</color>
+    <color name="bookmark_pink">#FFEC407A</color>
+    <color name="bookmark_purple">#FFAB47BC</color>
+    <color name="bookmark_deep_purple">#FF7E57C2</color>
+    <color name="bookmark_indigo">#FF5C6BC0</color>
+    <color name="bookmark_blue">#FF42A5F5</color>
+    <color name="bookmark_light_blue">#FF29B6F6</color>
+    <color name="bookmark_cyan">#FF26C6DA</color>
+    <color name="bookmark_teal">#FF26A69A</color>
+    <color name="bookmark_green">#FF66BB6A</color>
+    <color name="bookmark_deep_orange">#FFFF7043</color>
+    <color name="bookmark_brown">#FF8D6E63</color>
+    <color name="bookmark_blue_grey">#FF78909C</color>
+
+    <color name="dark_0">#FF202125</color>
+    <color name="dark_1">#FF2C2D33</color>
+
+    <color name="grey_1">#FFE0E0E0</color>
+
     <color name="icon_dark_theme">#FFFFFFFF</color>
-    <color name="icon_light_theme_disabled">#40000000</color>
-    <color name="icon_dark_theme_disabled">#8AFFFFFF</color>
+    <color name="icon_light_theme">#8A000000</color>
 
-    <color name="error_red">#F44336</color>
-
-    <color name="bookmark_default_blue">#2196F3</color>
-    <color name="bookmark_default_green">#4CAF50</color>
-    <color name="bookmark_default_red">#EF5350</color>
-    <color name="bookmark_default_orange">#FF9800</color>
-
-    <color name="ssl_secured">#4CAF50</color>
-    <color name="ssl_unsecured">#F44336</color>
-
+    <color name="red_300">#FFE57373</color>
+    <color name="red_500">#FFF44336</color>
 </resources>

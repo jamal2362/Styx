@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="uiController"
+            type="com.jamal2367.styx.controller.UIController" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/colorBackground"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?android:attr/colorBackground"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/action_close_all_tabs"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/action_close_all_other_tabs"
+                    android:onClick="@{(view) -> uiController.executeAction(view.id)}"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/ic_delete_sweep"
+                    app:tooltipText="@{@string/action_close_all_other_tabs}" />
+
+                <ImageButton
+                    android:id="@+id/action_restore_all_pages"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/action_restore_all_tabs"
+                    android:onClick="@{(view) -> uiController.executeAction(view.id)}"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/ic_restore_from_trash"
+                    app:tooltipText="@{@string/action_restore_all_tabs}" />
+
+                <ImageButton
+                    android:id="@+id/action_restore_page"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/action_restore_tab"
+                    android:onClick="@{(view) -> uiController.executeAction(view.id)}"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/outline_restore_page_24"
+                    app:tooltipText="@{@string/action_restore_tab}" />
+
+                <ImageButton
+                    android:id="@+id/action_sessions"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/action_sessions"
+                    android:onClick="@{(view) -> uiController.executeAction(view.id)}"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/ic_sessions"
+                    app:tooltipText="@{@string/action_sessions}" />
+
+                <ImageButton
+                    android:id="@+id/action_new_tab"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/action_new_tab"
+                    android:onClick="@{(view) -> uiController.executeAction(view.id)}"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/ic_action_plus"
+                    app:tooltipText="@{@string/action_new_tab}" />
+
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tabs_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:descendantFocusability="afterDescendants"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:focusable="true"
+            android:overScrollMode="ifContentScrolls"
+            android:paddingVertical="4dp"
+            android:requiresFadingEdge="vertical"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/tab_list_item" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,11 +1,12 @@
-<!-- Copyright 2014 ACR Development -->
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    android:id="@+id/coordinator_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".browser.activity.BrowserActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".browser.activity.BrowserActivity">
 
         <androidx.drawerlayout.widget.DrawerLayout
             android:id="@+id/drawer_layout"
@@ -17,33 +18,65 @@
                 android:id="@+id/ui_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:background="?android:attr/colorBackground"
                 android:orientation="vertical">
 
-                <include layout="@layout/toolbar"/>
+                <include
+                    android:id="@+id/toolbar_include"
+                    layout="@layout/toolbar" />
 
-                <include layout="@layout/browser_content"/>
+                <com.jamal2367.styx.view.PullRefreshLayout
+                    android:id="@+id/content_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:animateLayoutChanges="true"
+                    android:background="?android:attr/colorBackground"
+                    android:clipChildren="true" />
 
-                <include layout="@layout/search_interface"/>
+                <include
+                    android:id="@+id/findInPageInclude"
+                    layout="@layout/search_interface" />
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_navigation"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="bottom"
+                    android:background="?android:attr/colorBackground"
+                    app:elevation="0dp"
+                    app:itemActiveIndicatorStyle="@color/transparent"
+                    app:itemIconTint="@drawable/toolbar_color"
+                    app:itemTextColor="?attr/colorControlNormal"
+                    app:labelVisibilityMode="unlabeled"
+                    app:menu="@menu/bottom_menu" />
             </LinearLayout>
 
             <FrameLayout
                 android:id="@+id/left_drawer"
-                android:layout_width="@dimen/navigation_drawer_max_width"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
-                android:background="?attr/drawerBackground"
+                android:layout_marginStart="-64dp"
+                android:background="?android:attr/colorBackground"
+                android:clickable="true"
                 android:fitsSystemWindows="true"
-                android:weightSum="1"/>
+                android:focusable="true"
+                android:weightSum="1" />
 
             <FrameLayout
                 android:id="@+id/right_drawer"
-                android:layout_width="@dimen/navigation_drawer_max_width"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="end"
-                android:background="?attr/drawerBackground"
+                android:layout_marginStart="-64dp"
+                android:background="?android:attr/colorBackground"
+                android:clickable="true"
                 android:fitsSystemWindows="true"
-                android:weightSum="1"/>
-
+                android:focusable="true"
+                android:weightSum="1" />
         </androidx.drawerlayout.widget.DrawerLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

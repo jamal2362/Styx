@@ -6,16 +6,16 @@
     android:clickable="false"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingStart="@dimen/material_grid_margin"
+    android:paddingStart="16dp"
     android:paddingTop="3dp"
-    android:paddingEnd="@dimen/material_grid_margin"
+    android:paddingEnd="16dp"
     android:paddingBottom="3dp"
     android:weightSum="1">
 
     <ImageView
         android:id="@+id/suggestionIcon"
-        android:layout_width="@dimen/material_grid_small_icon"
-        android:layout_height="@dimen/material_grid_small_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:contentDescription="@null" />
 
     <LinearLayout
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/material_grid_margin"
-        android:paddingRight="@dimen/material_grid_margin">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
         <TextView
             android:id="@+id/title"
@@ -33,7 +33,6 @@
             android:layout_weight="1"
             android:ellipsize="end"
             android:maxLines="1"
-            android:textColor="?attr/autoCompleteTitleColor"
             android:textSize="18sp" />
 
         <TextView
@@ -42,17 +41,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ellipsize="end"
-            android:maxLines="1"
-            android:textColor="?attr/autoCompleteUrlColor" />
+            android:maxLines="1" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/complete_search"
-        android:layout_width="@dimen/material_grid_touch_small"
-        android:layout_height="@dimen/material_grid_touch_small"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/search_insert_suggestion"
         android:scaleType="center"
         app:srcCompat="@drawable/ic_insert" />
-
 </LinearLayout>

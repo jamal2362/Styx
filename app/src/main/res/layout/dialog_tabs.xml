@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="10dp">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/dialog_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:tabGravity="fill"
+        app:tabInlineLabel="true"
+        app:tabMaxWidth="0dp"
+        app:tabMode="fixed" />
+
+    <com.jamal2367.styx.view.DynamicHeightViewPager
+        android:id="@+id/dialog_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="6dp" />
+</LinearLayout>

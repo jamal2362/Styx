@@ -1,39 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
-    <header
-        android:fragment="acr.browser.lightning.settings.fragment.AdBlockSettingsFragment"
-        android:title="@string/settings_adblock"/>
-    <header
-        android:fragment="acr.browser.lightning.settings.fragment.GeneralSettingsFragment"
-        android:title="@string/settings_general"/>
-    <header
-        android:fragment="acr.browser.lightning.settings.fragment.BookmarkSettingsFragment"
-        android:title="@string/bookmark_settings"/>
-    <header
-        android:fragment="acr.browser.lightning.settings.fragment.DisplaySettingsFragment"
-        android:title="@string/settings_display"/>
-    <header
-        android:fragment="acr.browser.lightning.settings.fragment.PrivacySettingsFragment"
-        android:title="@string/settings_privacy"/>
-    <header
-        android:fragment="acr.browser.lightning.settings.fragment.AdvancedSettingsFragment"
-        android:title="@string/settings_advanced"/>
-    <header
-        android:fragment="acr.browser.lightning.settings.fragment.AboutSettingsFragment"
-        android:summary="@string/settings_about_explain"
-        android:title="@string/settings_about"/>
-    <header
-        android:summary="@string/faq_description"
-        android:title="@string/faq">
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:data="http://acrdevelopment.org/lightning/faq">
-            <extra
-                android:name="SOURCE"
-                android:value="SELF"/>
-        </intent>
-    </header>
-    <header
-        android:fragment="acr.browser.lightning.settings.fragment.DebugSettingsFragment"
-        android:title="@string/debug_title"/>
-</preference-headers>
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.preference.Preference
+        app:fragment="com.jamal2367.styx.settings.fragment.GeneralSettingsFragment"
+        app:icon="@drawable/ic_settings"
+        app:summary="@string/settings_summary_general"
+        app:title="@string/settings_general" />
+
+    <androidx.preference.Preference
+        app:fragment="com.jamal2367.styx.settings.fragment.DisplaySettingsFragment"
+        app:icon="@drawable/ic_palette"
+        app:summary="@string/settings_summary_display"
+        app:title="@string/settings_display" />
+
+    <androidx.preference.Preference
+        app:fragment="com.jamal2367.styx.settings.fragment.PortraitLandscapeSettingsFragment"
+        app:icon="@drawable/ic_screen_rotation"
+        app:summary="@string/settings_summary_portraitlandscape"
+        app:title="@string/settings_portrait_landscape" />
+
+    <androidx.preference.Preference
+        app:fragment="com.jamal2367.styx.settings.fragment.TabsSettingsFragment"
+        app:icon="@drawable/ic_tab"
+        app:summary="@string/settings_summary_tabs"
+        app:title="@string/tabs" />
+
+    <androidx.preference.Preference
+        app:fragment="com.jamal2367.styx.settings.fragment.PrivacySettingsFragment"
+        app:icon="@drawable/ic_security"
+        app:summary="@string/settings_summary_privacy"
+        app:title="@string/settings_privacy" />
+
+    <androidx.preference.Preference
+        app:fragment="com.jamal2367.styx.settings.fragment.AdBlockSettingsFragment"
+        app:icon="@drawable/ic_block"
+        app:summary="@string/settings_summary_content_control"
+        app:title="@string/settings_ad_blocking" />
+
+    <androidx.preference.Preference
+        app:fragment="com.jamal2367.styx.settings.fragment.ImportExportSettingsFragment"
+        app:icon="@drawable/ic_import_export"
+        app:summary="@string/settings_summary_import_export"
+        app:title="@string/import_export_settings" />
+
+    <androidx.preference.Preference
+        app:fragment="com.jamal2367.styx.settings.fragment.AppsSettingsFragment"
+        app:icon="@drawable/ic_apps"
+        app:summary="@string/settings_summary_apps"
+        app:title="@string/settings_title_apps" />
+
+    <androidx.preference.Preference
+        app:fragment="com.jamal2367.styx.settings.fragment.AboutSettingsFragment"
+        app:icon="@drawable/ic_about"
+        app:summary="@string/settings_summary_about"
+        app:title="@string/settings_about" />
+
+</androidx.preference.PreferenceScreen>

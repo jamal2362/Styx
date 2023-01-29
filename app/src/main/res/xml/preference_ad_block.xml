@@ -1,17 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/settings_advanced">
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="cb_block_ads"
-            android:title="@string/block_ads"/>
+<!--
+ The contents of this file are subject to the Common Public Attribution License Version 1.0.
+ (the "License"); you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at:
+ https://github.com/Slion/Fulguris/blob/main/LICENSE.CPAL-1.0.
+ The License is based on the Mozilla Public License Version 1.1, but Sections 14 and 15 have been
+ added to cover use of software over a computer network and provide for limited attribution for
+ the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF
+ ANY KIND, either express or implied. See the License for the specific language governing rights
+ and limitations under the License.
+ The Original Code is Fulguris.
+ The Original Developer is the Initial Developer.
+ The Initial Developer of the Original Code is Stéphane Lenclud.
+ All portions of the code written by Stéphane Lenclud are Copyright © 2020 Stéphane Lenclud.
+ All Rights Reserved.
+-->
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/settings_ad_blocking">
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="@bool/pref_default_block_ads"
+            android:key="@string/pref_key_content_control"
+            android:summary="@string/settings_summary_content_control_toggle"
+            android:title="@string/enable"
+            app:icon="@drawable/ic_block" />
+
         <Preference
-            android:key="preference_hosts_source"
-            android:summary="@string/block_source_default"
-            android:title="@string/block_ad_source"/>
+            android:dependency="@string/pref_key_content_control"
+            android:key="@string/pref_key_blocklist_auto_update"
+            android:title="@string/blocklist_update_mode"
+            app:icon="@drawable/ic_action_refresh" />
+
         <Preference
-            android:key="preference_hosts_refresh_force"
-            android:summary="@string/block_ad_remote_refresh_frequency_description"
-            android:title="@string/block_ad_refresh_now"/>
+            android:dependency="@string/pref_key_content_control"
+            android:key="@string/pref_key_blocklist_auto_update_frequency"
+            android:title="@string/blocklist_update_frequency"
+            app:icon="@drawable/ic_update" />
+
+        <Preference
+            android:dependency="@string/pref_key_content_control"
+            android:key="@string/pref_key_modify_filters"
+            android:title="@string/use_modify_filters"
+            app:icon="@drawable/ic_eye" />
+
     </PreferenceCategory>
-</PreferenceScreen>
+
+    <com.jamal2367.styx.settings.fragment.PreferenceCategoryEx
+        android:dependency="@string/pref_key_content_control"
+        android:key="@string/pref_key_content_control_filters"
+        android:summary="@string/pref_category_summary_filters"
+        android:title="@string/pref_category_filters">
+    </com.jamal2367.styx.settings.fragment.PreferenceCategoryEx>
+
+</androidx.preference.PreferenceScreen>

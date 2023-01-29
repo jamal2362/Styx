@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:key="@string/pref_key_session_export_category"
+        android:title="@string/action_sessions">
+
+        <Preference
+            android:key="@string/pref_key_sessions_import"
+            android:title="@string/generic_import"
+            app:icon="@drawable/ic_apps" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/bookmark_settings">
+
+        <Preference
+            android:key="import_bookmark"
+            android:title="@string/import_backup"
+            app:icon="@drawable/ic_file_import" />
+
+        <Preference
+            android:key="export_bookmark"
+            android:title="@string/export_bookmarks"
+            app:icon="@drawable/ic_file_export" />
+
+        <Preference
+            android:key="delete_bookmarks"
+            android:title="@string/action_delete_all_bookmarks"
+            app:icon="@drawable/ic_restore_page" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings">
+
+        <Preference
+            android:key="import_settings"
+            android:title="@string/import_settings"
+            app:icon="@drawable/ic_apps" />
+
+        <Preference
+            android:key="export_settings"
+            android:title="@string/export_settings"
+            app:icon="@drawable/ic_save" />
+
+        <Preference
+            android:key="clear_settings"
+            android:title="@string/reset_settings"
+            app:icon="@drawable/ic_delete_forever" />
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ The contents of this file are subject to the Common Public Attribution License Version 1.0.
+ (the "License"); you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at:
+ https://github.com/Slion/Fulguris/blob/main/LICENSE.CPAL-1.0.
+ The License is based on the Mozilla Public License Version 1.1, but Sections 14 and 15 have been
+ added to cover use of software over a computer network and provide for limited attribution for
+ the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF
+ ANY KIND, either express or implied. See the License for the specific language governing rights
+ and limitations under the License.
+ The Original Code is Fulguris.
+ The Original Developer is the Initial Developer.
+ The Initial Developer of the Original Code is Stéphane Lenclud.
+ All portions of the code written by Stéphane Lenclud are Copyright © 2020 Stéphane Lenclud.
+ All Rights Reserved.
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        style="?attr/popupMenuStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/popupMenuBackground"
+        android:elevation="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="250dp"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/menuShortcutBack"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/action_back"
+                app:srcCompat="@drawable/ic_action_back"
+                app:tooltipText="@{@string/action_back}" />
+
+            <ImageButton
+                android:id="@+id/menuShortcutForward"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/action_forward"
+                app:srcCompat="@drawable/ic_action_forward"
+                app:tooltipText="@{@string/action_forward}" />
+
+            <ImageButton
+                android:id="@+id/menuShortcutRefresh"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/action_reload"
+                app:srcCompat="@drawable/round_refresh_24"
+                app:tooltipText="@{@string/action_reload}" />
+
+            <ImageButton
+                android:id="@+id/menuShortcutBookmarks"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/action_bookmarks"
+                app:srcCompat="@drawable/round_star_border_24"
+                app:tooltipText="@{@string/action_bookmarks}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <ScrollView
+                android:id="@+id/scrollViewItems"
+                android:layout_width="250dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:overScrollMode="never"
+                android:paddingBottom="10dp"
+                android:requiresFadingEdge="vertical"
+                tools:ignore="NestedWeights">
+
+                <LinearLayout
+                    android:id="@+id/layoutMenuItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/menuItemNewTab"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/action_new_tab"
+                        app:drawableStartCompat="@drawable/ic_action_plus" />
+
+                    <TextView
+                        android:id="@+id/menuItemIncognito"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:enabled="true"
+                        android:text="@string/action_incognito"
+                        app:drawableStartCompat="@drawable/ic_incognito_24" />
+
+                    <TextView
+                        android:id="@+id/menuItemSessions"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/action_sessions"
+                        app:drawableStartCompat="@drawable/ic_sessions" />
+
+                    <TextView
+                        android:id="@+id/menuItemAddBookmark"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/action_add_bookmark"
+                        app:drawableStartCompat="@drawable/ic_bookmark_add" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <TextView
+                        android:id="@+id/menuItemHistory"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/action_history"
+                        app:drawableStartCompat="@drawable/round_history_24" />
+
+                    <TextView
+                        android:id="@+id/menuItemDownloads"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/action_downloads"
+                        app:drawableStartCompat="@drawable/ic_file_download" />
+
+                    <TextView
+                        android:id="@+id/menuItemPrint"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/action_print"
+                        app:drawableStartCompat="@drawable/ic_action_print" />
+
+                    <View
+                        android:id="@+id/divider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <TextView
+                        android:id="@+id/menuItemCopyLink"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@android:string/copyUrl"
+                        app:drawableStartCompat="@drawable/ic_content_copy" />
+
+                    <TextView
+                        android:id="@+id/menuItemShare"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/action_share"
+                        app:drawableStartCompat="@drawable/ic_share" />
+
+                    <TextView
+                        android:id="@+id/menuItemFind"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/action_find"
+                        app:drawableStartCompat="@drawable/ic_find" />
+
+                    <TextView
+                        android:id="@+id/menuItemAddToHome"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/action_add_to_homescreen"
+                        app:drawableStartCompat="@drawable/ic_add_to_home_screen" />
+
+                    <View
+                        android:id="@+id/divider3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <CheckBox
+                        android:id="@+id/menuItemDesktopMode"
+                        style="@style/BrowserTextMenuItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:button="@null"
+                        android:enabled="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/agent_desktop"
+                        app:drawableEndCompat="?android:attr/listChoiceIndicatorMultiple"
+                        app:drawableStartCompat="@drawable/round_desktop_windows_24" />
+
+                    <CheckBox
+                        android:id="@+id/menuItemDarkMode"
+                        style="@style/BrowserTextMenuItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:button="@null"
+                        android:enabled="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/dark_mode"
+                        app:drawableEndCompat="?android:attr/listChoiceIndicatorMultiple"
+                        app:drawableStartCompat="@drawable/round_dark_mode_24" />
+
+                    <CheckBox
+                        android:id="@+id/menuItemAdBlock"
+                        style="@style/BrowserTextMenuItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:button="@null"
+                        android:enabled="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/settings_ad_blocking"
+                        app:drawableEndCompat="?android:attr/listChoiceIndicatorMultiple"
+                        app:drawableStartCompat="@drawable/outline_remove_circle_outline_24" />
+
+                    <View
+                        android:id="@+id/divider4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <TextView
+                        android:id="@+id/menuItemTranslate"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/translator"
+                        app:drawableStartCompat="@drawable/round_translate_24" />
+
+                    <TextView
+                        android:id="@+id/menuItemReaderMode"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/reading_mode"
+                        app:drawableStartCompat="@drawable/ic_action_reading" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <TextView
+                        android:id="@+id/menuItemSettings"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/settings"
+                        app:drawableStartCompat="@drawable/outline_settings_24" />
+
+                    <TextView
+                        android:id="@+id/menuItemExit"
+                        style="@style/BrowserTextMenuItem"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="@string/exit"
+                        app:drawableStartCompat="@drawable/round_clear_24" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,32 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:background="?attr/listBackground"
-    android:gravity="center_vertical"
-    android:orientation="horizontal">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/faviconBookmark"
-        android:layout_width="@dimen/material_grid_small_icon"
-        android:layout_height="@dimen/material_grid_small_icon"
-        android:layout_marginLeft="@dimen/material_grid_margin"
-        android:layout_marginRight="@dimen/material_grid_margin"
-        android:gravity="center_vertical"
-        android:contentDescription="@null" />
-
-    <TextView
-        android:id="@+id/textBookmark"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/material_grid_margin"
-        android:layout_marginRight="@dimen/material_grid_margin"
-        android:ellipsize="end"
-        android:fontFamily="sans-serif"
-        android:gravity="center_vertical"
-        android:maxLines="1"
-        android:minHeight="?android:attr/listPreferredItemHeightSmall"
-        android:singleLine="true"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="6dp"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="false">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/faviconBookmark"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@null"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/textBookmark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:minHeight="?attr/listPreferredItemHeightSmall"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall" />
+
+            <ImageButton
+                android:id="@+id/button_edit"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="@dimen/material_grid_touch_large"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/title_edit_bookmark"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_edit_note"
+                app:tooltipText="@{@string/title_edit_bookmark}" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

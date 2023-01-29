@@ -1,156 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources>
 
-    <!-- Settings themes -->
-    <style name="Theme.SettingsTheme" parent="Theme.LightTheme">
-        <item name="android:windowBackground">@null</item>
-        <item name="toolbarSettingsBackground">@drawable/toolbar_elevate</item>
-    </style>
-
-    <style name="Theme.SettingsTheme.Dark" parent="Theme.DarkTheme">
-        <item name="android:windowBackground">@null</item>
-        <item name="toolbarSettingsBackground">@drawable/toolbar_elevate_dark</item>
-
-        <!-- Dark settings has a special primary dark -->
-        <item name="colorPrimaryDark">@color/secondary_color_settings_dark</item>
-    </style>
-
-    <style name="Theme.SettingsTheme.Black" parent="Theme.BlackTheme">
-        <item name="android:windowBackground">@null</item>
-        <item name="toolbarSettingsBackground">@drawable/toolbar_elevate_black</item>
-    </style>
-
-    <!-- Regular themes -->
-    <style name="Theme.LightTheme" parent="Theme.BaseLightTheme">
-        <item name="searchBackground">@drawable/card_bg_elevate</item>
-        <item name="listBackground">@drawable/list_bg</item>
-        <item name="progressBackgroundColor">@color/secondary_color</item>
-    </style>
-
-    <style name="Theme.DarkTheme" parent="Theme.BaseDarkTheme">
-        <item name="searchBackground">@drawable/card_bg_elevate</item>
-        <item name="listBackground">@drawable/list_bg</item>
-        <item name="progressBackgroundColor">@color/secondary_color</item>
-    </style>
-
-    <style name="Theme.BlackTheme" parent="Theme.BaseBlackTheme">
-        <item name="searchBackground">@drawable/card_bg_elevate</item>
-        <item name="listBackground">@drawable/list_bg</item>
-        <item name="progressBackgroundColor">@color/black</item>
-    </style>
-
-    <!-- Base Themes -->
-    <style name="Theme.BaseLightTheme" parent="Theme.AppCompat.Light">
-
-        <!-- Theme Colors -->
-        <item name="colorPrimary">@color/primary_color</item>
+    <style name="Theme.App.Light" parent="Theme.Material3.Light">
         <item name="colorPrimaryDark">@color/transparent</item>
-        <item name="colorAccent">@color/accent_color</item>
-        <item name="drawerBackground">@color/drawer_background</item>
-        <item name="dividerColor">@color/divider_light</item>
-
-        <item name="iconColor">@color/icon_light_theme</item>
-        <item name="iconColorState">@color/state_color_icons_light</item>
-
-        <item name="autoCompleteTitleColor">@color/black</item>
-        <item name="autoCompleteUrlColor">@color/hint_text_light_theme</item>
-
-        <item name="selectedBackground">@color/selected_light</item>
-
+        <item name="colorSurface">@color/white</item>
+        <item name="colorSecondaryVariant">@color/red_500</item>
+        <item name="colorTertiary">@color/grey_1</item>
+        <item name="colorPrimary">@color/red_500</item>
+        <item name="colorPrimaryContainer">#FFC62828</item>
+        <item name="colorSecondary">@color/red_500</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColorHighlight">@color/red_300</item>
+        <item name="popupMenuBackground">@drawable/popup_menu_background</item>
+        <item name="popupMenuStyle">@drawable/session_menu_background</item>
+        <item name="materialCardViewStyle">@style/App.Widget.Material3.CardView.Outlined</item>
+        <item name="snackbarButtonStyle">@style/MaterialSnackbarTextButtonTheme</item>
         <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="android:windowContentOverlay">@null</item>
-
-        <!-- Overflow menu -->
-        <item name="actionOverflowButtonStyle">@style/overFlowButtonStyle</item>
-
-        <!-- Alert dialogs -->
-        <item name="alertDialogTheme">@style/AppCompatDialogStyle.Light</item>
-
+        <item name="enableEdgeToEdge">true</item>
     </style>
 
-    <style name="Theme.BaseDarkTheme" parent="Theme.AppCompat">
-
-        <!-- Theme colors -->
-        <item name="colorPrimary">@color/primary_color_dark</item>
+    <style name="Theme.App.Dark" parent="Theme.Material3.Dark">
         <item name="colorPrimaryDark">@color/transparent</item>
-        <item name="colorAccent">@color/accent_color</item>
-        <item name="drawerBackground">@color/drawer_background_dark</item>
-        <item name="dividerColor">@color/divider_dark</item>
-
-        <item name="iconColor">@color/icon_dark_theme</item>
-        <item name="iconColorState">@color/state_color_icons_dark</item>
-
-        <item name="autoCompleteTitleColor">@color/white</item>
-        <item name="autoCompleteUrlColor">@color/hint_text_dark_theme</item>
-
-        <item name="selectedBackground">@color/selected_dark</item>
-
+        <item name="colorSurface">@color/dark_0</item>
+        <item name="colorSecondaryVariant">@color/red_300</item>
+        <item name="colorTertiary">@color/dark_1</item>
+        <item name="colorPrimary">@color/red_300</item>
+        <item name="colorPrimaryContainer">#E53935</item>
+        <item name="colorSecondary">@color/red_300</item>
+        <item name="android:colorBackground">@color/dark_0</item>
+        <item name="android:textColorHighlight">@color/red_300</item>
+        <item name="android:navigationBarColor">@color/dark_0</item>
+        <item name="popupMenuBackground">@drawable/popup_menu_background</item>
+        <item name="popupMenuStyle">@drawable/session_menu_background</item>
+        <item name="materialCardViewStyle">@style/App.Widget.Material3.CardView.Outlined</item>
+        <item name="snackbarStyle">@style/MaterialSnackbarTheme.Dark</item>
+        <item name="snackbarTextViewStyle">@style/MaterialSnackbarTextViewTheme.Dark</item>
+        <item name="snackbarButtonStyle">@style/MaterialSnackbarTextButtonTheme.Dark</item>
         <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="android:windowContentOverlay">@null</item>
-
-        <!-- Overflow menu -->
-        <item name="actionOverflowButtonStyle">@style/overFlowButtonStyle</item>
-
-        <!-- Alert dialogs -->
-        <item name="alertDialogTheme">@style/AppCompatDialogStyle.Dark</item>
+        <item name="enableEdgeToEdge">true</item>
     </style>
 
-    <style name="Theme.BaseBlackTheme" parent="Theme.AppCompat">
-
-        <!-- Theme Colors -->
-        <item name="colorPrimary">@color/black</item>
-        <item name="colorPrimaryDark">@color/black</item>
-        <item name="colorAccent">@color/accent_color</item>
-        <item name="drawerBackground">@color/black</item>
-        <item name="dividerColor">@color/black</item>
-
-        <item name="iconColor">@color/icon_dark_theme</item>
-        <item name="iconColorState">@color/state_color_icons_dark</item>
-
-        <item name="autoCompleteTitleColor">@color/white</item>
-        <item name="autoCompleteUrlColor">@color/hint_text_dark_theme</item>
-
-        <item name="selectedBackground">@color/selected_dark</item>
-
+    <style name="Theme.App.Black" parent="Theme.Material3.Dark">
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorSurface">@color/black</item>
+        <item name="colorSecondaryVariant">@color/red_300</item>
+        <item name="colorTertiary">@color/dark_0</item>
+        <item name="colorPrimary">@color/red_300</item>
+        <item name="colorPrimaryContainer">#E53935</item>
+        <item name="colorSecondary">@color/red_300</item>
+        <item name="android:colorBackground">@color/black</item>
+        <item name="android:textColorHighlight">@color/red_300</item>
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="popupMenuBackground">@drawable/popup_menu_background</item>
+        <item name="popupMenuStyle">@drawable/session_menu_background</item>
+        <item name="materialCardViewStyle">@style/App.Widget.Material3.CardView.Outlined</item>
+        <item name="snackbarStyle">@style/MaterialSnackbarTheme.Dark</item>
+        <item name="snackbarTextViewStyle">@style/MaterialSnackbarTextViewTheme.Dark</item>
+        <item name="snackbarButtonStyle">@style/MaterialSnackbarTextButtonTheme.Dark</item>
         <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="android:windowContentOverlay">@null</item>
-
-        <!-- Overflow menu -->
-        <item name="actionOverflowButtonStyle">@style/overFlowButtonStyle</item>
-
-        <!-- Alert dialogs -->
-        <item name="alertDialogTheme">@style/AppCompatDialogStyle.Black</item>
+        <item name="enableEdgeToEdge">true</item>
     </style>
 
-    <!-- AlertDialog Theming -->
-    <style name="AppCompatDialogStyle.Light" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/accent_color</item>
-    </style>
+    <style name="Theme.App.DayNight" parent="Theme.App.Light" />
 
-    <style name="AppCompatDialogStyle.Dark" parent="Theme.AppCompat.Dialog.Alert">
-        <item name="colorAccent">@color/accent_color</item>
-    </style>
-
-    <style name="AppCompatDialogStyle.Black" parent="Theme.AppCompat.Dialog.Alert">
-        <item name="colorAccent">@color/accent_color</item>
-    </style>
-
-    <!-- Overflow Menu Customization -->
-    <style name="overFlowButtonStyle" parent="@style/Widget.AppCompat.ActionButton.Overflow">
-        <item name="android:minWidth">48dp</item>
-        <item name="android:padding">0dp</item>
-    </style>
-
-    <!-- Text Customization -->
     <style name="boldText">
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="italicText">
+        <item name="android:textStyle">italic</item>
     </style>
 
     <style name="normalText">
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="BrowserTextMenuItem" parent="@style/Widget.AppCompat.ActionButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="paddingEnd">30dp</item>
+        <item name="paddingStart">30dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:paddingLeft">12dp</item>
+    </style>
+
+    <style name="AnimationMenu">
+        <item name="android:windowEnterAnimation">@anim/menu_open</item>
+        <item name="android:windowExitAnimation">@anim/menu_close</item>
+    </style>
+
+    <style name="AnimationMenuBottom">
+        <item name="android:windowEnterAnimation">@anim/menu_open_bottom</item>
+        <item name="android:windowExitAnimation">@anim/menu_close_bottom</item>
+    </style>
+
+    <style name="MaterialSnackbarTheme.Dark" parent="@style/Widget.Material3.Snackbar">
+        <item name="android:backgroundTint">?attr/colorTertiary</item>
+    </style>
+
+    <style name="MaterialSnackbarTextViewTheme.Dark" parent="@style/Widget.Material3.Snackbar.TextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="MaterialSnackbarTextButtonTheme" parent="@style/Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textColor">?attr/colorPrimaryContainer</item>
+        <item name="rippleColor">?attr/colorPrimaryContainer</item>
+    </style>
+
+    <style name="MaterialSnackbarTextButtonTheme.Dark" parent="@style/Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="rippleColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="App.Widget.Material3.CardView.Outlined" parent="Widget.Material3.CardView.Outlined">
+        <item name="strokeColor">?attr/colorPrimaryContainer</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="cardCornerRadius">24dp</item>
+        <item name="checkedIconMargin">10dp</item>
+        <item name="checkedIconSize">8dp</item>
+        <item name="checkedIcon">@drawable/ic_circle</item>
+        <item name="checkedIconTint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Accent_Pink">
+        <item name="colorPrimary">#E91E63</item>
+        <item name="colorPrimaryContainer">#AD1457</item>
+        <item name="colorSecondary">#E91E63</item>
+        <item name="colorAccent">#E91E63</item>
+    </style>
+
+    <style name="Accent_Puple">
+        <item name="colorPrimary">#9C27B0</item>
+        <item name="colorPrimaryContainer">#6A1B9A</item>
+        <item name="colorSecondary">#9C27B0</item>
+        <item name="colorAccent">#9C27B0</item>
+    </style>
+
+    <style name="Accent_Deep_Purple">
+        <item name="colorPrimary">#673AB7</item>
+        <item name="colorPrimaryContainer">#4527A0</item>
+        <item name="colorSecondary">#673AB7</item>
+        <item name="colorAccent">#673AB7</item>
+    </style>
+
+    <style name="Accent_Indigo">
+        <item name="colorPrimary">#3F51B5</item>
+        <item name="colorPrimaryContainer">#283593</item>
+        <item name="colorSecondary">#3F51B5</item>
+        <item name="colorAccent">#3F51B5</item>
+    </style>
+
+    <style name="Accent_Blue">
+        <item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimaryContainer">#1565C0</item>
+        <item name="colorSecondary">#2196F3</item>
+        <item name="colorAccent">#2196F3</item>
+    </style>
+
+    <style name="Accent_Light_Blue">
+        <item name="colorPrimary">#03A9F4</item>
+        <item name="colorPrimaryContainer">#0277BD</item>
+        <item name="colorSecondary">#03A9F4</item>
+        <item name="colorAccent">#03A9F4</item>
+    </style>
+
+    <style name="Accent_Cyan">
+        <item name="colorPrimary">#00BCD4</item>
+        <item name="colorPrimaryContainer">#00838F</item>
+        <item name="colorSecondary">#00BCD4</item>
+        <item name="colorAccent">#00BCD4</item>
+    </style>
+
+    <style name="Accent_Teal">
+        <item name="colorPrimary">#009688</item>
+        <item name="colorPrimaryContainer">#00695C</item>
+        <item name="colorSecondary">#009688</item>
+        <item name="colorAccent">#009688</item>
+    </style>
+
+    <style name="Accent_Green">
+        <item name="colorPrimary">#4CAF50</item>
+        <item name="colorPrimaryContainer">#2E7D32</item>
+        <item name="colorSecondary">#4CAF50</item>
+        <item name="colorAccent">#4CAF50</item>
+    </style>
+
+    <style name="Accent_Light_Green">
+        <item name="colorPrimary">#8BC34A</item>
+        <item name="colorPrimaryContainer">#558B2F</item>
+        <item name="colorSecondary">#8BC34A</item>
+        <item name="colorAccent">#8BC34A</item>
+    </style>
+
+    <style name="Accent_Lime">
+        <item name="colorPrimary">#C0CA33</item>
+        <item name="colorPrimaryContainer">#9E9D24</item>
+        <item name="colorSecondary">#C0CA33</item>
+        <item name="colorAccent">#C0CA33</item>
+    </style>
+
+    <style name="Accent_Yellow">
+        <item name="colorPrimary">#FDD835</item>
+        <item name="colorPrimaryContainer">#F9A825</item>
+        <item name="colorSecondary">#FDD835</item>
+        <item name="colorAccent">#FDD835</item>
+    </style>
+
+    <style name="Accent_Amber">
+        <item name="colorPrimary">#FFB300</item>
+        <item name="colorPrimaryContainer">#FF8F00</item>
+        <item name="colorSecondary">#FFB300</item>
+        <item name="colorAccent">#FFB300</item>
+    </style>
+
+    <style name="Accent_Orange">
+        <item name="colorPrimary">#FF9800</item>
+        <item name="colorPrimaryContainer">#EF6C00</item>
+        <item name="colorSecondary">#FF9800</item>
+        <item name="colorAccent">#FF9800</item>
+    </style>
+
+    <style name="Accent_Deep_Orange">
+        <item name="colorPrimary">#FF5722</item>
+        <item name="colorPrimaryContainer">#D84315</item>
+        <item name="colorSecondary">#FF5722</item>
+        <item name="colorAccent">#FF5722</item>
+    </style>
+
+    <style name="Accent_Brown">
+        <item name="colorPrimary">#795548</item>
+        <item name="colorPrimaryContainer">#4E342E</item>
+        <item name="colorSecondary">#795548</item>
+        <item name="colorAccent">#795548</item>
+    </style>
 </resources>

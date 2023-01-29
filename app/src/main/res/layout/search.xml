@@ -1,62 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/search_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="2dp"
-    android:layout_marginTop="6dp"
-    android:layout_marginRight="2dp"
-    android:layout_marginBottom="6dp"
-    android:layout_weight="1"
-    android:background="?attr/searchBackground"
-    android:clipChildren="false"
-    android:clipToPadding="false"
-    android:descendantFocusability="beforeDescendants"
-    android:elevation="2dp"
-    android:focusableInTouchMode="true"
-    android:gravity="center"
-    android:orientation="horizontal">
+<!--
+ The contents of this file are subject to the Common Public Attribution License Version 1.0.
+ (the "License"); you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at:
+ https://github.com/Slion/Fulguris/blob/main/LICENSE.CPAL-1.0.
+ The License is based on the Mozilla Public License Version 1.1, but Sections 14 and 15 have been
+ added to cover use of software over a computer network and provide for limited attribution for
+ the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF
+ ANY KIND, either express or implied. See the License for the specific language governing rights
+ and limitations under the License.
+ The Original Code is Fulguris.
+ The Original Developer is the Initial Developer.
+ The Initial Developer of the Original Code is Stéphane Lenclud.
+ All portions of the code written by Stéphane Lenclud are Copyright © 2020 Stéphane Lenclud.
+ All Rights Reserved.
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/search_ssl_status"
-        android:layout_width="@dimen/material_grid_touch_small"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:background="?selectableItemBackgroundBorderless"
-        android:padding="6dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="9dp"
+        android:layout_weight="1"
+        android:background="@drawable/address_bar_background"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:descendantFocusability="beforeDescendants"
+        android:elevation="2dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <acr.browser.lightning.view.SearchView
-        android:id="@+id/search"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:background="@null"
-        android:completionThreshold="1"
-        android:dropDownAnchor="@+id/toolbar_layout"
-        android:dropDownWidth="match_parent"
-        android:gravity="start|center_vertical"
-        android:hint="@string/search_hint"
-        android:imeOptions="actionGo"
-        android:importantForAutofill="no"
-        android:inputType="textUri"
-        android:maxLines="1"
-        android:selectAllOnFocus="true"
-        android:textColor="?attr/autoCompleteTitleColor"
-        android:textColorHint="?attr/autoCompleteUrlColor"
-        android:textCursorDrawable="@null"
-        app:layout_constraintEnd_toStartOf="@+id/search_refresh"
-        app:layout_constraintStart_toEndOf="@+id/search_ssl_status"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_goneMarginLeft="8dp" />
+        <ImageView
+            android:id="@+id/search_ssl_status"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:contentDescription="@null"
+            android:focusable="false"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/search_refresh"
-        android:layout_width="@dimen/material_grid_touch_small"
-        android:layout_height="match_parent"
-        android:background="?selectableItemBackgroundBorderless"
-        android:padding="6dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <com.jamal2367.styx.view.SearchView
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:background="@null"
+            android:clickable="true"
+            android:completionThreshold="1"
+            android:dropDownAnchor="@id/toolbar_include"
+            android:dropDownWidth="match_parent"
+            android:ellipsize="middle"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="start|center_vertical"
+            android:hint="@string/search_homepage"
+            android:imeOptions="actionGo"
+            android:importantForAutofill="no"
+            android:inputType="textUri"
+            android:scrollHorizontally="true"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/search_ssl_status"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginLeft="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

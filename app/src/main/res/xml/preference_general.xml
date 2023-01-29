@@ -1,40 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory android:title="@string/settings_general">
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="cb_images"
-            android:title="@string/block"/>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="savedata"
-            android:title="@string/save_data" />
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="cb_javascript"
-            android:title="@string/java"/>
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="cb_colormode"
-            android:title="@string/color_mode"/>
-        <Preference
-            android:key="proxy"
-            android:title="@string/http_proxy"/>
-        <Preference
-            android:key="agent"
-            android:title="@string/agent"/>
-        <Preference
-            android:key="download"
-            android:title="@string/download"/>
+
         <Preference
             android:key="home"
-            android:title="@string/home"/>
+            android:title="@string/home"
+            app:icon="@drawable/ic_action_home" />
+
         <Preference
             android:key="search"
-            android:title="@string/search"/>
+            android:title="@string/search"
+            app:icon="@drawable/ic_search" />
+
         <Preference
             android:key="suggestions_choice"
-            android:title="@string/search_suggestions"/>
+            android:title="@string/search_suggestions"
+            app:icon="@drawable/ic_list" />
+
+        <Preference
+            android:key="suggestions_number"
+            android:title="@string/suggest"
+            app:icon="@drawable/ic_list_number" />
+
     </PreferenceCategory>
-</PreferenceScreen>
+
+    <PreferenceCategory android:title="@string/home">
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="false"
+            android:key="show_shortcuts"
+            android:title="@string/show_shortcuts"
+            app:icon="@drawable/ic_apps"
+            app:singleLineTitle="false" />
+
+        <Preference
+            android:key="image_url"
+            android:title="@string/image_url"
+            app:icon="@drawable/ic_image" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_advanced">
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_keep_screen_on"
+            android:title="@string/pref_title_screen_on"
+            app:icon="@drawable/ic_brightness"
+            app:singleLineTitle="false" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_show_download_confirmation"
+            android:summary="@string/recommended"
+            android:title="@string/pref_title_download_dialog"
+            app:icon="@drawable/ic_cloud_download"
+            app:singleLineTitle="false" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_show_update"
+            android:summary="@string/recommended"
+            android:title="@string/update_message"
+            app:icon="@drawable/ic_action_refresh"
+            app:singleLineTitle="false" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="@bool/pref_default_menu_show_exit"
+            android:key="@string/pref_key_menu_show_exit"
+            android:summary="@string/pref_summary_menu_show_exit"
+            android:title="@string/pref_title_menu_show_exit"
+            app:icon="@drawable/ic_action_delete"
+            app:singleLineTitle="false" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_load_images"
+            android:summary="@string/recommended"
+            android:title="@string/load_images"
+            app:icon="@drawable/ic_image" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_support_multiple_window"
+            android:summary="@string/recommended"
+            android:title="@string/window"
+            app:icon="@drawable/ic_baseline_open_in_new_24"
+            app:singleLineTitle="false" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_request_save_data"
+            android:title="@string/save_data"
+            app:icon="@drawable/ic_data_save" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="true"
+            android:key="show_ssl"
+            android:summary="@string/recommended"
+            android:title="@string/show_ssl"
+            app:icon="@drawable/ic_warn" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_cookies"
+            android:summary="@string/recommended"
+            android:title="@string/cookies"
+            app:icon="@drawable/ic_cookie" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="false"
+            android:key="@string/pref_key_cookies_incognito"
+            android:title="@string/incognito_cookies"
+            app:icon="@drawable/ic_cookie" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="false"
+            android:key="force_zoom"
+            android:summary="@string/force_zoom_summary"
+            android:title="@string/force_zoom"
+            app:icon="@drawable/ic_force_zoom" />
+
+        <com.jamal2367.styx.preference.M3SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/pref_key_javascript"
+            android:summary="@string/recommended"
+            android:title="@string/java"
+            app:icon="@drawable/ic_script" />
+
+        <Preference
+            android:key="block_javascript"
+            android:title="@string/block_javascript"
+            app:icon="@drawable/ic_script_key" />
+
+        <Preference
+            android:key="agent"
+            android:title="@string/agent"
+            app:icon="@drawable/ic_about" />
+
+        <Preference
+            android:key="@string/pref_key_default_text_encoding"
+            android:title="@string/text_encoding"
+            app:icon="@drawable/ic_text_variant" />
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

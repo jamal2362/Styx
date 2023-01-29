@@ -1,54 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/search_bar"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/material_grid_touch_medium"
-    android:background="?attr/colorPrimary"
-    android:orientation="horizontal"
-    android:visibility="gone"
-    android:weightSum="1">
 
-    <TextView
-        android:id="@+id/search_query"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:ellipsize="end"
-        android:fontFamily="sans-serif"
-        android:gravity="center_vertical"
-        android:paddingLeft="@dimen/material_grid_margin"
-        android:textAppearance="?android:attr/textAppearanceListItem"
-        android:textSize="22sp"/>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageButton
-        android:id="@+id/button_back"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="?selectableItemBackgroundBorderless"
-        android:contentDescription="@null"
-        android:tint="?attr/iconColor"
-        app:srcCompat="@drawable/ic_action_collapse"/>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="?android:attr/colorBackground"
+        android:visibility="gone">
 
-    <ImageButton
-        android:id="@+id/button_next"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="?selectableItemBackgroundBorderless"
-        android:contentDescription="@null"
-        android:tint="?attr/iconColor"
-        app:srcCompat="@drawable/ic_action_expand"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorSurface" />
 
-    <ImageButton
-        android:id="@+id/button_quit"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="?selectableItemBackgroundBorderless"
-        android:contentDescription="@null"
-        android:tint="?attr/iconColor"
-        app:srcCompat="@drawable/ic_action_delete"/>
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/search_query"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:hint="@string/search_homepage"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <ImageButton
+                android:id="@+id/button_back"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_action_collapse" />
+
+            <ImageButton
+                android:id="@+id/button_next"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/ic_action_expand" />
+
+            <ImageButton
+                android:id="@+id/button_quit"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                app:srcCompat="@drawable/round_clear_24" />
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</layout>

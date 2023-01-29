@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ The contents of this file are subject to the Common Public Attribution License Version 1.0.
+ (the "License"); you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at:
+ https://github.com/Slion/Fulguris/blob/main/LICENSE.CPAL-1.0.
+ The License is based on the Mozilla Public License Version 1.1, but Sections 14 and 15 have been
+ added to cover use of software over a computer network and provide for limited attribution for
+ the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ Software distributed under the License is distributed on an "AS IS" basis, WITHOUT WARRANTY OF
+ ANY KIND, either express or implied. See the License for the specific language governing rights
+ and limitations under the License.
+ The Original Code is Fulguris.
+ The Original Developer is the Initial Developer.
+ The Initial Developer of the Original Code is Stéphane Lenclud.
+ All portions of the code written by Stéphane Lenclud are Copyright © 2020 Stéphane Lenclud.
+ All Rights Reserved.
+-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="uiController"
+            type="com.jamal2367.styx.controller.UIController" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/popupMenuStyle"
+        android:elevation="8dp"
+        android:minWidth="300dp"
+        android:minHeight="300dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:ellipsize="marquee"
+                    android:gravity="start|center"
+                    android:singleLine="true"
+                    android:text="@string/action_sessions"
+                    android:textAlignment="gravity" />
+
+                <ImageButton
+                    android:id="@+id/button_edit_sessions"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/action_new_session"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/ic_edit"
+                    app:tooltipText="@{@string/action_edit_sessions}" />
+
+                <ImageButton
+                    android:id="@+id/button_save_session"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/action_save_session"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/outline_save_24"
+                    app:tooltipText="@{@string/action_save_session}" />
+
+
+                <ImageButton
+                    android:id="@+id/button_new_session"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/action_new_session"
+                    android:scaleType="center"
+                    app:srcCompat="@drawable/ic_action_plus"
+                    app:tooltipText="@{@string/action_new_session}" />
+            </LinearLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_sessions"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:descendantFocusability="afterDescendants"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:focusable="true"
+            android:overScrollMode="always"
+            android:paddingVertical="5dp"
+            android:requiresFadingEdge="vertical"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/session_list_item" />
+    </LinearLayout>
+</layout>
