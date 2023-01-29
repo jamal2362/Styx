@@ -3862,7 +3862,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 presenter.closeAllOtherTabs()
             },
             DialogItem(
-                icon = this.drawable(R.drawable.round_clear_24),
+                icon = this.drawable(R.drawable.ic_action_delete),
                 title = R.string.exit, onClick = this::closeBrowser))
     }
 
