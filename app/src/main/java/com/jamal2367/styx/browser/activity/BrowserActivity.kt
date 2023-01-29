@@ -1550,6 +1550,23 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                 KeyEvent.KEYCODE_F3 -> {
                     if (isShiftOnly) {
                         tabsManager.currentTab?.findPrevious()
+                    } else if (isCtrlOnly) {
+                        // Ctrl + F3 means use current selection to perform a search
+                        // We fetch current selection from WebView using JavaScript
+                        // TODO: Move JavaScript to WebViewEx
+                        (currentTabView as? WebViewEx)?.evaluateJavascript("(function(){return window.getSelection().toString()})()"
+                        ) { aSelection ->
+                            // Our selection is within double quotes
+                            if (aSelection.length >= 3) {
+                                // Remove our quotes
+                                val hint =
+                                    aSelection.subSequence(1, aSelection.length - 1).toString()
+                                // Set our search query
+                                tabsManager.currentTab?.searchQuery = hint
+                                // Trigger our search
+                                showFindInPageControls()
+                            }
+                        }
                     } else {
                         tabsManager.currentTab?.findNext()
                     }
