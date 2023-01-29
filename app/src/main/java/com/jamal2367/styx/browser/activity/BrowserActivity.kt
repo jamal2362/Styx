@@ -1676,6 +1676,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
                         resetCtrlTab()
                         return true
                     }
+                    KeyEvent.KEYCODE_F4,
                     KeyEvent.KEYCODE_W -> {
                         // Close current tab
                         tabsManager.let { presenter.deleteTab(it.indexOfCurrentTab()) }
