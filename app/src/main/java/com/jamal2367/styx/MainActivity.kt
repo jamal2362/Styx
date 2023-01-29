@@ -31,7 +31,7 @@ class MainActivity @Inject constructor() : BrowserActivity() {
 
     override fun isIncognito() = false
 
-    override fun closeActivity() = closePanels {
+    override fun closeActivity() {
         performExitCleanUp()
         moveTaskToBack(true)
     }

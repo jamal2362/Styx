@@ -2097,7 +2097,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         // otherwise it will get caught up with the showTab code
         // and cause a janky motion
         if (userPreferences.closeDrawer) {
-            mainHandler.postDelayed({ closePanels(null) }, 500)
+            mainHandler.postDelayed({ closePanels() }, 500)
         }
 
         // Notify user a tab was closed with an option to recover it
@@ -2210,7 +2210,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         // otherwise it will get caught up with the showTab code
         // and cause a janky motion
         if (userPreferences.closeDrawer) {
-            mainHandler.postDelayed({ closePanels(null) }, 200)
+            mainHandler.postDelayed({ closePanels() }, 200)
         }
 
         if (currentTabView == view) {
@@ -2282,7 +2282,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         presenter.tabChanged(position)
         // Keep the drawer open while the tab change animation in running
         // Has the added advantage that closing of the drawer itself should be smoother as the webview had a bit of time to load
-        mainHandler.postDelayed({ closePanels(null) }, 350)
+        mainHandler.postDelayed({ closePanels() }, 350)
     }
 
     /**
@@ -2290,7 +2290,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      */
     override fun newTabButtonClicked() {
         // First close drawer
-        closePanels(null)
+        closePanels()
         // Then slightly delay page loading to give enough time for the drawer to close without stutter
         mainHandler.postDelayed({
             if (isIncognito()) {
@@ -2350,7 +2350,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             presenter.loadUrlInCurrentView(entry.url)
         }
         // keep any jank from happening when the drawer is closed after the URL starts to load
-        mainHandler.postDelayed({ closePanels(null) }, 150)
+        mainHandler.postDelayed({ closePanels() }, 150)
     }
 
     /**
@@ -2383,21 +2383,24 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
     }
 
     /**
+     * Called notably when the device orientation was changed.
      *
+     * See: [Activity.onConfigurationChanged]
      */
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
+    override fun onConfigurationChanged(aNewConfig: Configuration) {
+        super.onConfigurationChanged(aNewConfig)
 
         logger.log(TAG, "onConfigurationChanged")
 
-        setFullscreenIfNeeded(newConfig)
+        setupDrawers()
+        setFullscreenIfNeeded(aNewConfig)
         setupTabBar()
-        setupToolBar(newConfig)
+        setupToolBar(aNewConfig)
         // Can't find a proper event to do that after the configuration changes were applied so we just delay it
         mainHandler.postDelayed({
             setupToolBar()
-            setupPullToRefresh(newConfig)
-            // Do we really need that?
+            setupPullToRefresh(aNewConfig)
+            // For embedded tab bars modes
             scrollToCurrentTab()
         }, 300)
         popupMenu.dismiss() // As it wont update somehow
@@ -2562,6 +2565,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         tabsManager.resumeAll()
         initializePreferences()
 
+        setupDrawers()
         if (!setupTabBar()) {
             // use Bottom sheets settings could have changed
             addTabsViewToParent()
@@ -2578,6 +2582,27 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         //intent?.let {logger.log(TAG, it.toString())}
 
         handleBookmarksChange()
+    }
+
+    /**
+     * We used that to solve issues with drawers sometimes breaking layout when empty after rotations.
+     * Notably an issue when using bottom sheet.
+     */
+    private fun setupDrawers() {
+        if (userPreferences.useBottomSheets) {
+            // We don't need drawers when using bottom sheets
+            iBinding.leftDrawer.removeFromParent()
+            iBinding.rightDrawer.removeFromParent()
+        } else {
+            // We may need drawers then, though it could be that the tab drawer is still not used
+            // Notably when using embedded tab bar, vertical or horizontal
+            if (iBinding.leftDrawer.parent==null) {
+                iBinding.drawerLayout.addView(iBinding.leftDrawer)
+            }
+            if (iBinding.rightDrawer.parent==null) {
+                iBinding.drawerLayout.addView(iBinding.rightDrawer)
+            }
+        }
     }
 
     /**
@@ -3085,10 +3110,9 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      *
      * @param runnable an optional runnable to run after the drawers are closed.
      */
-    protected fun closePanels(runnable: (() -> Unit)?) {
+    private fun closePanels() {
         closePanelTabs()
         closePanelBookmarks()
-        runnable?.invoke()
     }
 
     /**
@@ -3334,7 +3358,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
         val currentTab = tabsManager.currentTab
         if (currentTab?.canGoForward() == true) {
             currentTab.goForward()
-            closePanels(null)
+            closePanels()
         }
     }
 
@@ -3515,7 +3539,7 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
             StyxDialogBuilder.NewTab.FOREGROUND -> presenter.newTab(urlInitializer, true)
             StyxDialogBuilder.NewTab.BACKGROUND -> presenter.newTab(urlInitializer, false)
             StyxDialogBuilder.NewTab.INCOGNITO -> {
-                closePanels { }
+                closePanels()
                 val intent = IncognitoActivity.createIntent(this, url.toUri())
                 startActivity(intent)
                 overridePendingTransition(R.anim.slide_up_in, R.anim.fade_out_scale)
