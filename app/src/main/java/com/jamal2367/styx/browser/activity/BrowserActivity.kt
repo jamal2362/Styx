@@ -573,12 +573,16 @@ abstract class BrowserActivity : ThemedBrowserActivity(), BrowserView, UIControl
      * Open our sessions pop-up menu.
      */
     private fun showSessions() {
-        // If using horizontal tab bar or if our tab drawer is open
-        if (!verticalTabBar || tabsDialog.isShowing) {
-            // Use sessions button as anchor
+        // If using horizontal tab bar
+        // or if our bottom sheet dialog is opened
+        // or if using vertical embedded tab bar
+        // or drawer is opened, assuming tab drawer since that's the only one with sessions button
+        if (tabsView is TabsDesktopView || tabsDialog.isShowing || drawerOpened) {
+            // Use on screen session button as anchor
             buttonSessions.let { sessionsMenu.show(it) }
         } else {
             // Otherwise use main menu button as anchor
+            // Certainly calling sessions dialog from main menu option
             iBindingToolbarContent.buttonMore.let { sessionsMenu.show(it) }
         }
     }

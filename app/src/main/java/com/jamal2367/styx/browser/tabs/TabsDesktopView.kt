@@ -25,6 +25,7 @@ import com.jamal2367.styx.view.StyxView
 
 /**
  * A view which displays browser tabs in a horizontal [RecyclerView].
+ * TODO: Rename to horizontal?
  */
 class TabsDesktopView @JvmOverloads constructor(
     context: Context,
@@ -98,7 +99,7 @@ class TabsDesktopView @JvmOverloads constructor(
         // However sometimes it throws an illegal state exception so make sure we catch it.
         try {
             tabsAdapter.notifyItemChanged(position)
-        } catch (e: Exception) {
+        } catch (_: Exception) {
         }
 
     }
