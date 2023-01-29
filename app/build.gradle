@@ -70,7 +70,6 @@ dependencies {
     implementation 'androidx.palette:palette-ktx:1.0.0'
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation 'androidx.webkit:webkit:1.6.0'
-    implementation 'androidx.lifecycle:lifecycle-common-java8:2.5.1'
 
     // Dependencies Injection //
     implementation 'com.google.dagger:hilt-android:2.44.2'
