@@ -61,12 +61,12 @@
     <string name="ad_server_list">AdGuard Ad-Server Liste</string>
     <string name="add_blocklist_hint">Es können normale Hosts-Listen sowie beliebige Filterlisten gewählt werden, die mit den Regeln von Adblock Plus arbeiten.</string>
     <string name="add_blocklist">Filterdatei hinzufügen</string>
-    <string name="agent_android_mobile">Android (Mobile)</string>
+    <string name="agent_android_mobile">Android (Mobil)</string>
     <string name="agent_custom">Benutzerdefiniert</string>
     <string name="agent_default">Standard</string>
     <string name="agent_desktop">Desktop</string>
     <string name="agent_hide_device">Gerät verstecken</string>
-    <string name="agent_ios_mobile">iOS (Mobile)</string>
+    <string name="agent_ios_mobile">iOS (Mobil)</string>
     <string name="agent_linux_desktop">Linux (Desktop)</string>
     <string name="agent_macos_desktop">macOS (Desktop)</string>
     <string name="agent_system">System</string>
@@ -191,7 +191,6 @@
     <string name="invalid_url">Ungültige Adresse</string>
     <string name="invert_color">Farben invertieren</string>
     <string name="java">JavaScript aktivieren</string>
-    <string name="jsoup">jsoup: Java HTML Parser</string>
     <string name="label_realm">Server Nachricht: %s</string>
     <string name="library_netcipher">NetCipher</string>
     <string name="licenses">Open Source Lizenzen</string>
@@ -330,8 +329,8 @@
     <string name="session_switched">Zu \"%s\" gewechselt</string>
     <string name="settings_about">Über</string>
     <string name="settings_advanced">Erweitert</string>
-    <string name="settings_ad_blocking">Werbeblocker</string>
     <string name="settings_black_status_bar">Schwarze Statusleiste</string>
+    <string name="settings_ad_blocking">Werbeblocker</string>
     <string name="settings_credits">Danksagungen</string>
     <string name="settings_display">Darstellung</string>
     <string name="settings_export_failure">Einstellungen konnten nicht exportiert werden</string>
@@ -354,7 +353,7 @@
     <string name="settings_summary_privacy">Cache, Verlauf, Cookies…</string>
     <string name="settings_summary_tabs">Tabposition, Neuer Tab, Bottom Sheets…</string>
     <string name="settings_summary_vertical_tab_bar">Ausschalten um Desktop Tab-Drawer zu nutzen</string>
-    <string name="settings_title_apps">Apps</string>
+    <string name="settings_title_apps">Anwendungen</string>
     <string name="settings_title_dark_mode_default">Dunkel-Modus für Webseiten</string>
     <string name="settings_title_desktop_mode_default">Desktop-Modus</string>
     <string name="settings_title_toolbars_bottom">Suchleiste nach unten</string>

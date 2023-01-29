@@ -77,7 +77,7 @@
     <string name="agent">User agent</string>
     <string name="algorithm">Algorithm:</string>
     <string name="allow_javascript">Allow JavaScript for this site</string>
-    <string name="android_open_source_project">Android Open Source Project</string>
+    <string name="android_open_source_project" translatable="false">Android Open Source Project</string>
     <string name="apache" translatable="false">Apache License 2.0</string>
     <string name="apply">Apply</string>
     <string name="black_theme">Black (AMOLED)</string>
@@ -201,7 +201,7 @@
     <string name="invalid_url">Invalid URL</string>
     <string name="invert_color">Invert color</string>
     <string name="java">Enable JavaScript</string>
-    <string name="jsoup">jsoup: Java HTML Parser</string>
+    <string name="jsoup" translatable="false">jsoup: Java HTML Parser</string>
     <string name="label_realm">Server message: %s</string>
     <string name="library_netcipher">NetCipher</string>
     <string name="license_gnu" translatable="false">GNU Lesser General Public License</string>
@@ -459,37 +459,37 @@
     <string name="window">Allow sites to open new windows</string>
     <string name="yes">Yes</string>
 
-    <plurals name="notification_incognito_running_title">
+    <plurals name="notification_incognito_running_title" translatable="false">
         <item quantity="one">@string/one</item>
         <item quantity="other">@string/other</item>
     </plurals>
 
-    <string-array name="block_javascript">
+    <string-array name="block_javascript" translatable="false">
         <item>@string/no</item>
         <item>@string/unlisted_javascript</item>
         <item>@string/listed_javascript</item>
     </string-array>
 
-    <string-array name="homepage">
+    <string-array name="homepage" translatable="false">
         <item>@string/action_homepage</item>
         <item>@string/action_blank</item>
         <item>@string/action_bookmarks</item>
         <item>@string/action_webpage</item>
     </string-array>
 
-    <string-array name="new_tab_positions">
+    <string-array name="new_tab_positions" translatable="false">
         <item>@string/new_tab_position_after</item>
         <item>@string/new_tab_position_start</item>
         <item>@string/new_tab_position_end</item>
     </string-array>
 
-    <string-array name="new_tab_position_values">
+    <string-array name="new_tab_position_values" translatable="false">
         <item>@string/new_tab_position_after_value</item>
         <item>@string/new_tab_position_start_value</item>
         <item>@string/new_tab_position_end_value</item>
     </string-array>
 
-    <string-array name="suggestions">
+    <string-array name="suggestions" translatable="false">
         <item>@string/powered_by_google</item>
         <item>@string/powered_by_duck</item>
         <item>@string/powered_by_naver</item>
@@ -497,7 +497,7 @@
         <item>@string/search_suggestions_off</item>
     </string-array>
 
-    <string-array name="suggestion_name_array">
+    <string-array name="suggestion_name_array" translatable="false">
         <item>@string/two</item>
         <item>@string/three</item>
         <item>@string/four</item>
@@ -509,7 +509,7 @@
         <item>@string/ten</item>
     </string-array>
 
-    <string-array name="url_content_array">
+    <string-array name="url_content_array" translatable="false">
         <item>@string/domain</item>
         <item>@string/url</item>
         <item>@string/title_standard</item>
@@ -522,8 +522,8 @@
     <string name="pref_key_accent" translatable="false">pref_key_accent</string>
     <string name="pref_key_always_incognito" translatable="false">pref_key_always_incognito</string>
     <string name="pref_key_black_status_bar" translatable="false">pref_key_black_status_bar</string>
-    <string name="pref_key_blocklist_auto_update">pref_key_blocklist_auto_update</string>
-    <string name="pref_key_blocklist_auto_update_frequency">pref_key_blocklist_auto_update_frequency</string>
+    <string name="pref_key_blocklist_auto_update" translatable="false">pref_key_blocklist_auto_update</string>
+    <string name="pref_key_blocklist_auto_update_frequency" translatable="false">pref_key_blocklist_auto_update_frequency</string>
     <string name="pref_key_block_ads" translatable="false">pref_key_block_ads</string>
     <string name="pref_key_block_js" translatable="false">pref_key_block_js</string>
     <string name="pref_key_block_third_party" translatable="false">pref_key_block_third_party</string>
@@ -570,7 +570,7 @@
     <string name="pref_key_location" translatable="false">pref_key_location</string>
     <string name="pref_key_locked_drawers" translatable="false">pref_key_locked_drawers</string>
     <string name="pref_key_menu_show_exit" translatable="false">pref_key_menu_show_exit</string>
-    <string name="pref_key_modify_filters">pref_key_modify_filters</string>
+    <string name="pref_key_modify_filters" translatable="false">pref_key_modify_filters</string>
     <string name="pref_key_new_tab_position" translatable="false">pref_key_new_tab_position</string>
     <string name="pref_key_overview_mode" translatable="false">pref_key_overview_mode</string>
     <string name="pref_key_portrait_desktop_width" translatable="false">pref_key_portrait_desktop_width</string>
