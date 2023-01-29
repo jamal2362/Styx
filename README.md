@@ -12,7 +12,6 @@ If you like the Styx Browser, please support Fulguris too.
 you can find the awesome project on [GitHub](https://github.com/Slion/Fulguris).  
 
 ## Install Styx
-[<img src="https://abload.de/img/en_badge_web_genericbyjff.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.jamal2367.styx)  
 [<img src="https://abload.de/img/izzyondroidkek5i.png" alt="Get it on IzzyOnDroid" height="80">](https://android.izzysoft.de/repo/apk/com.jamal2367.styx)  
 or you can grab the latest APK on [GitHub](https://github.com/jamal2362/Styx/releases).  
 
