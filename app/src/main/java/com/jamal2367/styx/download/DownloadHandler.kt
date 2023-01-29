@@ -9,7 +9,6 @@ package com.jamal2367.styx.download
 import android.app.Activity
 import android.app.DownloadManager
 import android.net.Uri
-import android.os.Build
 import android.view.Gravity
 import android.webkit.CookieManager
 import com.jamal2367.styx.R
