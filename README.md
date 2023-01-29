@@ -1,7 +1,7 @@
 README
 ======
 
-[![GitHub license](https://img.shields.io/github/license/jamal2362/Styx)](https://github.com/jamal2362/Styx/blob/main/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/jamal2362/Styx)](https://github.com/jamal2362/Styx/issues) [![Crowdin](https://badges.crowdin.net/styx-browser/localized.svg)](https://crowdin.com/project/styx-browser) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jamal2362/Styx)](https://github.com/jamal2362/Styx/releases) [![GitHub all releases](https://img.shields.io/github/downloads/jamal2362/Styx/total)](https://github.com/jamal2362/Styx/releases)
+[![GitHub issues](https://img.shields.io/github/issues/jamal2362/Styx)](https://github.com/jamal2362/Styx/issues) [![Crowdin](https://badges.crowdin.net/styx-browser/localized.svg)](https://crowdin.com/project/styx-browser) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/jamal2362/Styx)](https://github.com/jamal2362/Styx/releases) [![GitHub all releases](https://img.shields.io/github/downloads/jamal2362/Styx/total)](https://github.com/jamal2362/Styx/releases)
 
 # Styx Browser - A fork of Fulguris with additional functions.
 
