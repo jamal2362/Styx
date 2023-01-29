@@ -11,7 +11,6 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Parcel
 import android.util.Log
-import androidx.annotation.NonNull
 import com.jamal2367.styx.BrowserApp
 import com.jamal2367.styx.utils.Utils.close
 import java.io.*
@@ -37,14 +36,16 @@ object FileUtils {
      * @param bundle the bundle to store in persistent storage.
      * @param name   the name of the file to store the bundle in.
      */
-    fun writeBundleToStorage(@NonNull app: Application, bundle: Bundle?, @NonNull name: String) {
+    fun writeBundleToStorage(app: Application, bundle: Bundle?, name: String) {
         val outputFile = File(app.filesDir, name)
         var outputStream: FileOutputStream? = null
         try {
             // if file exists, rename to name.backup
             val backupFile = File(outputFile.absolutePath + BACKUP_SUFFIX)
-            if (outputFile.exists() && backupFile.exists()) backupFile.delete() // need to delete old backup file before renaming?
-            if (outputFile.exists()) outputFile.renameTo(backupFile)
+            if (outputFile.exists()) {
+                if (backupFile.exists()) backupFile.delete() // need to delete old backup file before renaming
+                outputFile.renameTo(backupFile)
+            }
             outputStream = FileOutputStream(outputFile)
             val parcel = Parcel.obtain()
             parcel.writeBundle(bundle)
@@ -66,13 +67,13 @@ object FileUtils {
      * @param app  the application object needed to get the file.
      * @param name the name of the file.
      */
-    fun deleteBundleInStorage(app: Application, name: String) {
+    fun deleteBundleInStorage(app: Application, name: String, deleteBackup: Boolean) {
         val outputFile = File(app.filesDir, name)
         if (outputFile.exists()) {
             outputFile.delete()
         }
-
-        // we might have a backup file, needs to be deleted too, or it might get read accidentally
+        // only delete backup file of explicitly desired
+        if (!deleteBackup) return
         val backupFile = File(app.filesDir, name + BACKUP_SUFFIX)
         if (backupFile.exists()) {
             backupFile.delete()
@@ -92,12 +93,11 @@ object FileUtils {
             val destFile = File(app.filesDir, aNewName)
             srcFile.renameTo(destFile)
         }
-
-        val srcBackupFile = File(app.filesDir, name + BACKUP_SUFFIX)
-        if (srcBackupFile.exists()) {
-            val destBackupFile = File(app.filesDir, aNewName + BACKUP_SUFFIX)
-            srcBackupFile.renameTo(destBackupFile)
-        }
+        if (!name.endsWith(BACKUP_SUFFIX)) renameBundleInStorage(
+            app,
+            name + BACKUP_SUFFIX,
+            aNewName + BACKUP_SUFFIX
+        )
     }
 
     /**

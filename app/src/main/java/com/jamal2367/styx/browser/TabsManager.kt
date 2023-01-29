@@ -372,7 +372,11 @@ class TabsManager @Inject constructor(
      */
     private fun restorePreviousTabs(): MutableList<TabInitializer> {
         // First load our sessions
-        loadSessions()
+        try {
+            loadSessions()
+        } catch (ex: Throwable) {
+            loadSessions(true)
+        }
         // Check if we have a current session
         return if (iCurrentSessionName.isBlank()) {
             // No current session name meaning first load with version support
@@ -381,10 +385,18 @@ class TabsManager @Inject constructor(
             // At this stage we must have at least an empty list
             iSessions.add(Session(iCurrentSessionName))
             // Than load legacy session file to make sure tabs from earlier version are preserved
-            loadSession(FILENAME_SESSION_DEFAULT)
+            try {
+                loadSession(FILENAME_SESSION_DEFAULT)
+            } catch (ex: Throwable) {
+                loadSession(FILENAME_SESSION_DEFAULT + BACKUP_SUFFIX)
+            }
         } else {
             // Load current session then
-            loadSession(fileNameFromSessionName(iCurrentSessionName))
+            try {
+                loadSession(fileNameFromSessionName(iCurrentSessionName))
+            } catch (ex: Throwable) {
+                loadSession(fileNameFromSessionName(iCurrentSessionName) + BACKUP_SUFFIX)
+            }
         }
     }
 
@@ -616,7 +628,7 @@ class TabsManager @Inject constructor(
         // Save sessions info
         saveSessions()
         // Delete legacy session file if any, could not think of a better place to do that
-        FileUtils.deleteBundleInStorage(application, FILENAME_SESSION_DEFAULT)
+        FileUtils.deleteBundleInStorage(application, FILENAME_SESSION_DEFAULT, false)
         // Save our session
         saveCurrentSession(fileNameFromSessionName(iCurrentSessionName))
     }
@@ -665,8 +677,7 @@ class TabsManager @Inject constructor(
      * Use this method to clear the saved state if you do not wish it to be restored when the
      * browser next starts.
      */
-    private fun clearSavedState() =
-        FileUtils.deleteBundleInStorage(application, FILENAME_SESSION_DEFAULT)
+    private fun clearSavedState() = FileUtils.deleteBundleInStorage(application, FILENAME_SESSION_DEFAULT, true)
 
     /**
      *
@@ -680,7 +691,7 @@ class TabsManager @Inject constructor(
 
         val index = iSessions.indexOf(session(aSessionName))
         // Delete session file
-        FileUtils.deleteBundleInStorage(application, fileNameFromSessionName(iSessions[index].name))
+        FileUtils.deleteBundleInStorage(application, fileNameFromSessionName(iSessions[index].name), true)
         // Remove session from our list
         iSessions.removeAt(index)
     }
@@ -700,10 +711,19 @@ class TabsManager @Inject constructor(
     }
 
     /**
+     * Just the sessions list really
+     */
+    fun deleteSessions() {
+        FileUtils.deleteBundleInStorage(application, FILENAME_SESSIONS, true)
+    }
+
+    /**
      * Load our session list and current session name from disk.
+     * use [backup] to read from the backup file.
      */
     @Suppress("DEPRECATION")
-    private fun loadSessions() {
+    private fun loadSessions(backup: Boolean = false) {
+        val filename = FILENAME_SESSIONS + if (backup) BACKUP_SUFFIX else ""
         val bundle = FileUtils.readBundleFromStorage(application, FILENAME_SESSIONS)
 
         bundle?.apply {
@@ -711,6 +731,7 @@ class TabsManager @Inject constructor(
             // Sessions must have been loaded when we load that guys
             getString(KEY_CURRENT_SESSION)?.let { iCurrentSessionName = it }
         }
+        if (!backup) return // don't recoverSessions if we have a second try!
 
         // Somehow we lost that file again :)
         // That crazy bug we keep chasing after
@@ -812,6 +833,7 @@ class TabsManager @Inject constructor(
 
     companion object {
 
+        private const val BACKUP_SUFFIX = ".backup"
         private const val TAG = "TabsManager"
         private const val TAB_KEY_PREFIX = "TAB_"
 
