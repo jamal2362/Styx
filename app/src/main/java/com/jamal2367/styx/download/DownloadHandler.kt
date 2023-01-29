@@ -22,11 +22,9 @@ import java.io.File
 import java.io.IOException
 import javax.inject.Inject
 
-
 class DownloadHandler
 @Inject
 constructor(private var downloadManager: DownloadManager) {
-    @Suppress("DEPRECATION")
     fun onDownloadStartNoStream(
         context: Activity,
         preferences: UserPreferences,
@@ -82,11 +80,6 @@ constructor(private var downloadManager: DownloadManager) {
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE or DownloadManager.Request.NETWORK_WIFI)
         request.setAllowedOverRoaming(true)
         request.setAllowedOverMetered(true)
-
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-            request.setVisibleInDownloadsUi(true)
-            request.allowScanningByMediaScanner()
-        }
 
         request.addRequestHeader(COOKIE_REQUEST_HEADER, cookies)
         request.addRequestHeader(REFERER_REQUEST_HEADER, url)
