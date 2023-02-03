@@ -71,8 +71,8 @@ class AppsSettingsFragment : AbstractSettingsFragment() {
                     iPreference.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                         preferenceScreen.removeAll()
 
-                        val settings = context!!.getSharedPreferences("apps_settings", 0)
-                        settings.edit().clear().commit()
+                        val settings = requireContext().getSharedPreferences("apps_settings", 0)
+                        settings.edit().clear().apply()
 
                         (activity as AppCompatActivity).recreate()
                         true
