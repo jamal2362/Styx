@@ -528,26 +528,34 @@ class StyxView(
         // If forced dark mode is supported
         if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK) &&
             // and we are in dark theme or forced dark mode
-            ((activity as ThemedActivity).useDarkTheme || darkMode)
-        ) {
-            if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY)) {
+            ((activity as ThemedActivity).useDarkTheme || darkMode)) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
+                && WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING)) {
                 if (darkMode) {
-                    // User requested forced dark mode from menu, we need to enable user agent dark mode then.
-                    WebSettingsCompat.setForceDarkStrategy(
-                        settings,
-                        // Looks like that flag it's not working and will just do user agent dark mode even if page supports dark web theme.
-                        // That means that when using app light theme you can't get dark web theme, you will just get user agent dark theme.
-                        // No big deal though, just use app dark theme if you want proper web dark theme.
-                        WebSettingsCompat.DARK_STRATEGY_PREFER_WEB_THEME_OVER_USER_AGENT_DARKENING
-                    )
+                    WebSettingsCompat.setAlgorithmicDarkeningAllowed(settings, true)
                 } else {
-                    // We are in app dark theme but this page does not forces to dark mode
-                    // Just request dark web theme then.
-                    // That's actually the only way to dark web theme rather than user agent darkening, see above comment.
-                    WebSettingsCompat.setForceDarkStrategy(
-                        settings,
-                        WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY
-                    )
+                    WebSettingsCompat.setAlgorithmicDarkeningAllowed(settings, false)
+                }
+            } else {
+                if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY)) {
+                    if (darkMode) {
+                        // User requested forced dark mode from menu, we need to enable user agent dark mode then.
+                        WebSettingsCompat.setForceDarkStrategy(
+                            settings,
+                            // Looks like that flag it's not working and will just do user agent dark mode even if page supports dark web theme.
+                            // That means that when using app light theme you can't get dark web theme, you will just get user agent dark theme.
+                            // No big deal though, just use app dark theme if you want proper web dark theme.
+                            WebSettingsCompat.DARK_STRATEGY_PREFER_WEB_THEME_OVER_USER_AGENT_DARKENING
+                        )
+                    } else {
+                        // We are in app dark theme but this page does not forces to dark mode
+                        // Just request dark web theme then.
+                        // That's actually the only way to dark web theme rather than user agent darkening, see above comment.
+                        WebSettingsCompat.setForceDarkStrategy(
+                            settings,
+                            WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY
+                        )
+                    }
                 }
             }
 
