@@ -14,7 +14,6 @@ import android.os.Bundle
 import android.os.StrictMode
 import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.library.BuildConfig
 import com.jamal2367.styx.database.bookmark.BookmarkExporter
 import com.jamal2367.styx.database.bookmark.BookmarkRepository
 import com.jamal2367.styx.di.DatabaseScheduler
