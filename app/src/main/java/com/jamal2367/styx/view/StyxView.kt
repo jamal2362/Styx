@@ -1186,10 +1186,10 @@ class StyxView(
         private var canTriggerLongPress = true
 
         override fun onFling(
-            e1: MotionEvent,
+            e1: MotionEvent?,
             e2: MotionEvent,
             velocityX: Float,
-            velocityY: Float,
+            velocityY: Float
         ): Boolean {
             val power = (velocityY * 100 / maxFling).toInt()
             if (power < -10) {

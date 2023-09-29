@@ -7,13 +7,12 @@ plugins {
 
 android {
     namespace 'com.jamal2367.styx'
-    compileSdkVersion 33
-    buildToolsVersion '33.0.0'
+    compileSdk 34
 
     defaultConfig {
         applicationId 'com.jamal2367.styx'
         minSdkVersion 23
-        targetSdkVersion 33
+        targetSdk 34
         versionCode 172
         versionName '17.2'
         resConfigs 'de', 'en'
@@ -67,20 +66,20 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
     // Google Stuff //
-    implementation 'com.google.android.material:material:1.9.0-rc01'
-    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.google.android.material:material:1.11.0-alpha03'
+    implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.google.re2j:re2j:1.6'
 
     // AndroidX Stuff //
-    implementation 'androidx.fragment:fragment-ktx:1.5.7'
+    implementation 'androidx.fragment:fragment-ktx:1.6.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.palette:palette-ktx:1.0.0'
-    implementation 'androidx.preference:preference-ktx:1.2.0'
-    implementation 'androidx.webkit:webkit:1.6.1'
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+    implementation 'androidx.webkit:webkit:1.8.0'
 
     // Dependencies Injection //
-    implementation 'com.google.dagger:hilt-android:2.45'
-    kapt 'com.google.dagger:hilt-compiler:2.45'
+    implementation 'com.google.dagger:hilt-android:2.48'
+    kapt 'com.google.dagger:hilt-compiler:2.48'
 
     // Permissions //
     implementation 'com.anthonycr.grant:permissions:1.1.2'
